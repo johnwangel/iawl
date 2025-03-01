@@ -3,6 +3,6 @@
   flex-direction: $dir;
   justify-content: $justify;
   align-items: $align;
-  wrap: $wrap;
+  flex-wrap: $wrap;
   gap: $gap;
 }

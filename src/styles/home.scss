@@ -9,14 +9,15 @@
   width: 100%;
 
   .logo-container {
-  	@include flex();
+  	position: relative;
+	  	@include flex();
   	height: 100vh;
   	max-height: 100vh;
   	min-height: 100vh;
   	width: 100%;
 
 	  img.expand-img {
-	    animation: 1s ease-in-out 0s slideInFromBottom;
+	    animation: 1s ease-in-out 0s slideInFromTop;
 	    height: 100%;
 	    max-height: 100%;
 	  }
@@ -47,10 +48,14 @@
 			  	position: relative;
 			  	@include flex($dir:column);
 			  	.super-title {
+			  		text-align: center;
+			  		width: 100%;
 			  		font-size: 20pt;
 			  		text-transform: uppercase;
 			  	}
 			  	.author {
+			  		text-align: center;
+			  		width: 100%;
 			  		font-size: 32pt;
 			  	}
 
@@ -62,17 +67,106 @@
 }
 
 
-	.ack {
-		color: white;
-		width: 75%;
-		padding: 50px 0;
-		text-align: center;
-		font-size: 24pt;
-		line-height: 40pt;
+@media screen and (max-width:1024px) {
+
+	.app-main {
+		.logo-container {
+			@include flex($dir:column);
+	  	width: 100vw;
+	  	max-height: 100vw;
+	  	min-height: 100vw;
+	  	height: unset;
+	  	min-height: unset;
+	  	max-height: unset;
+
+	  	img.expand-img {
+		    width: 100%;
+		    max-width: 100%;
+		    min-width: 100%;
+		    height: 100%;
+		    max-height: 100%;
+		    min-height: 100%;
+		  }
+
+		  .credits {
+		  	position: relative;
+		  	.authors {
+		  		padding-top: 50px;
+		  	}
+
+		  }
+
+			.credits .authors .au-cont {
+			  	&.left {
+			  		animation: 1.5s ease-in-out 0s slideInFromLeft;
+			  	}
+
+			  	&.right{
+			  		animation: 1.5s ease-in-out 0s slideInFromRight;
+			  	}
+
+			  	position: relative;
+			  	@include flex($dir:column);
+			  	.super-title {
+			  		font-size: 14pt;
+			  		text-transform: uppercase;
+			  	}
+			  	.author {
+			  		font-size: 24pt;
+			  	}
+			  }
+		}
+
+		.ack {
+			width: 90%;
+			font-size: 18pt;
+			line-height: 25pt;
+		}
+
+	}
+}
+
+@media screen and (max-width:500px) {
+
+	.app-main .logo-container img.expand-img {
+		height: 35vh;
+		width: unset;
+		object-fit: cover;
 
 	}
 
+	.app-main .logo-container .credits .authors {
+		padding: 0;
+		@include flex($dir:column);
+		.au-cont {
+			padding-top: 25px;
+			.super-title {
+				font-size: 15pt;
+			}
+			.author {
+				font-size: 20pt;
+			}
+		}
+	}
 
+	.ack {
+		padding-top: 100px;
+		font-size: 15pt;
+		line-height: 20pt;
+	}
+
+}
+
+.ack {
+	position: relative;
+	color: white;
+	width: 75%;
+	padding: 50px 0;
+	text-align: center;
+	font-size: 24pt;
+	line-height: 42pt;
+	animation: 1.5s ease-in-out 0s slideInFromBottom;
+}
 
 @keyframes slideInFromLeft {
 	0% { transform: translateX(-100vw) }
@@ -85,6 +179,11 @@
 }
 
 @keyframes slideInFromBottom {
+	0% { transform: translateY(200vh) }
+	100% { transform: translateY(0) }
+}
+
+@keyframes slideInFromTop {
 	0% { transform: translateY(-100vh) }
 	100% { transform: translateY(0) }
 }
