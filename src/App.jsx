@@ -1,16 +1,14 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Header } from './nav/header.jsx'
+import { Main } from './pages/main.jsx'
+
+import './App.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <p className="read-the-docs">
-        It's a Wonderful Life
-      </p>
+      <Header />
+      <Main />
     </>
   )
 }
