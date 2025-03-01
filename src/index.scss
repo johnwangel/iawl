@@ -90,17 +90,3 @@ button:focus-visible {
   z-index: 100;
   color: white;
 }
-
-.app-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-  width: 100%;
-
-  img {
-    max-height: 100vh;
-  }
-
-}

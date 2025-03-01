@@ -3,7 +3,9 @@ import '../styles/home.scss'
 
 export function Main(props){
 	return <div className='app-main'>
-					<img src={LOGO} alt='logo' />
+					<div className='logo-container'>
+						<img className='expand-img' src={LOGO} alt='logo' />
+					</div>
 
 						<div className='credits'>
 							<div className='authors'>
