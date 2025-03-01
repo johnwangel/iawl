@@ -21,50 +21,70 @@
 	    max-height: 100%;
 	  }
 
-  }
+		.credits {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 100;
+			@include flex($dir:column);
+			width: 100%;
+			color: white;
+			.authors {
+				width: calc(100% - 15%);
+				padding: 0 8% 0 5%;
+			  @include flex($justify:space-between);
 
+			  .au-cont {
+			  	&.left {
+			  		animation: 1.5s ease-in-out 0s slideInFromLeft;
+			  	}
+
+			  	&.right{
+			  		animation: 1.5s ease-in-out 0s slideInFromRight;
+			  	}
+
+			  	position: relative;
+			  	@include flex($dir:column);
+			  	.super-title {
+			  		font-size: 20pt;
+			  		text-transform: uppercase;
+			  	}
+			  	.author {
+			  		font-size: 32pt;
+			  	}
+
+			  }
+
+			}
+		}
+  }
 }
 
-.credits {
-	padding: 50px;
-	@include flex($dir:column);
-	width: 100%;
-	color: white;
-	.authors {
-		width: calc(100% - 30%);
-		padding: 50px 15% 0;
-	  @include flex($justify:space-between);
-
-	  .au-cont {
-	  	@include flex($dir:column);
-
-	  	.super-title {
-	  		font-size: 14pt;
-	  		text-transform: uppercase;
-	  	}
-
-	  	.author {
-	  		font-size: 24pt;
-	  	}
-
-	 
-	  }
-
-	}
 
 	.ack {
-		width: 50%;
-		padding: 100px 0;
+		color: white;
+		width: 75%;
+		padding: 50px 0;
 		text-align: center;
-		font-size: 18pt;
-		line-height: 30pt;
+		font-size: 24pt;
+		line-height: 40pt;
 
 	}
-	
+
+
+
+@keyframes slideInFromLeft {
+	0% { transform: translateX(-100vw) }
+	100% { transform: translateX(0) }
 }
 
+@keyframes slideInFromRight {
+	0% { transform: translateX(200vw) }
+	100% { transform: translateX(0) }
+}
 
 @keyframes slideInFromBottom {
-	0% { transform: translateY(-100vw) }
+	0% { transform: translateY(-100vh) }
 	100% { transform: translateY(0) }
 }
