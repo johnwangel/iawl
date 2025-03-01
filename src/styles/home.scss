@@ -1,0 +1,39 @@
+@import './mixins.scss';
+
+.credits {
+	padding: 50px;
+	@include flex($dir:column);
+	width: 100%;
+	color: white;
+	.authors {
+		width: calc(100% - 30%);
+		padding: 50px 15% 0;
+	  @include flex($justify:space-between);
+
+	  .au-cont {
+	  	@include flex($dir:column);
+
+	  	.super-title {
+	  		font-size: 14pt;
+	  		text-transform: uppercase;
+	  	}
+
+	  	.author {
+	  		font-size: 24pt;
+	  	}
+
+	 
+	  }
+
+	}
+
+	.ack {
+		width: 50%;
+		padding: 100px 0;
+		text-align: center;
+		font-size: 18pt;
+		line-height: 30pt;
+
+	}
+	
+}
