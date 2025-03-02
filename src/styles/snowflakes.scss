@@ -34,7 +34,12 @@
 }
 
 .snowflake .inner{
+	font-size: 24pt;
 	animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear
+	&.small { font-size: 14pt;}
+	&.medium { font-size: 16pt;}
+	&.large { font-size: 18pt;}
+	&.extra-large { font-size: 30pt;}
 }
 .snowflake:nth-of-type(0){
 	left:1%;animation-delay:0s
