@@ -21,8 +21,8 @@
 }
 
 .authors {
-	width: calc(100% - 15%);
-	padding: 50px 8% 0 5%;
+	width: calc(100% - 20vw);
+	padding: 50px 8% 0 10vw;
   @include flex($justify:space-between);
 
   .au-cont {

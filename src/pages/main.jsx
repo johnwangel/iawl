@@ -47,7 +47,7 @@ export function Main(props){
 
 					<div className='op-container'><Controls /></div>
 
-					<Quote quote="...doesn&rsquo;t merely transpose Frank Capra's beloved film to the state--it reimagines it with a theatrical flourish all its own." attr='Broadway World' />
+					<Quote quote=" . . . doesn&rsquo;t merely transpose Frank Capra's beloved film to the stage - it reimagines it with a theatrical flourish all its own." attr='Broadway World' />
 
 					<Footer />
 
