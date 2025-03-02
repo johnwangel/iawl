@@ -1,6 +1,4 @@
-@use './styles/mixins' as mixins;
-
-$iceblue: #396d7c;
+@import './styles/mixins';
 
 :root {
   font-family: system-ui, 'Playfair Display', Helvetica, Arial, sans-serif;

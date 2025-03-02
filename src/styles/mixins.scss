@@ -1,3 +1,10 @@
+$iceblue: #396d7c;
+$lightblue: #dcf3ff;
+$aqua: #baf2ef;
+$coolblue: #a2d2df;
+$steelblue: #257ca3;
+
+
 @mixin flex($display:flex,$dir:row,$justify:center,$align:center,$wrap:nowrap,$gap:0) {
   display: $display;
   flex-direction: $dir;
