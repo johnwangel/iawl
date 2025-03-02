@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import LOGO from '../assets/iawl_logo.jpg'
-import REEL from '../assets/iawl_reel.mp4'
+//import REEL from '../assets/iawl_reel.mp4'
 
 import P1 from '../assets/photos/photo1.jpg'
 import P2 from '../assets/photos/photo2.jpg'
@@ -26,7 +26,7 @@ export function Main(props){
 
 					<div className='op-container full'>
 							<video className='video-container' controls poster={LOGO}>
-							  <source src={ REEL } type="video/mp4" />
+							  <source src='' type="video/mp4" />
 								Your browser does not support the video tag.
 							</video>
 							<div className='authors'>
