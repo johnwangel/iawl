@@ -3,6 +3,7 @@ import '../styles/home.scss'
 
 export function Main(props){
 	return <div className='app-main'>
+					<Snowflakes />
 					<div className='logo-container'>
 						<img className='expand-img' src={LOGO} alt='logo' />
 						<div className='credits'>
@@ -18,15 +19,15 @@ export function Main(props){
 							</div>
 						</div>
 					</div>
+					<div className='ack'>
+						<i>It's A Wonderful Life</i> is based on the story 'The Greatest Gift' by Philip Van Doren Stern.
+						   'The Greatest Gift' is used by permission of The Greatest Gift Corporation.
+					</div>				 
+				 </div>
+}
 
-
-							<div className='ack'>
-								<i>It's A Wonderful Life</i> is based on the story 'The Greatest Gift' by Philip Van Doren Stern.
-								   'The Greatest Gift' is used by permission of The Greatest Gift Corporation.
-							</div>				 
-
-
-					<div class="snowflakes" aria-hidden="true">
+function Snowflakes(props){
+	return 	<div class="snowflakes" aria-hidden="true">
 					  <div class="snowflake">
 					    <div class="inner">❅</div>
 					  </div>
@@ -64,13 +65,4 @@ export function Main(props){
 					    <div class="inner">❅</div>
 					  </div>
 					</div>
-
-
-
-
-
-				 </div>
-
-
-
 }
