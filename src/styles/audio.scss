@@ -3,7 +3,7 @@
 .audio-container {
 	overflow: auto;
 	width: 300px;
-	padding: 15px;
+	padding: 0;
 	background-color: $coolblue;
 	border-radius: 5px;
 }
@@ -11,7 +11,7 @@
 .audio-player {
 	width: 100%;
 	@include flex(flex,row,flex-start,center);
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid $steelblue;
 	height: 30px;
 
 	.audio-name {
@@ -20,10 +20,10 @@
 
 }
 
-
 .audio-control {
 	font-size: 22pt;
-	margin-right: 20px;
+	margin-left: 5px;
+	margin-right: 15px;
 	width: 15px;
 	color: $steelblue;
 }
