@@ -250,8 +250,9 @@
 	}
 
 	.button-container {
-		@include flex($gap:5px);
-		margin-top: 25px;
+		width: calc(100% - 20px);
+		@include flex($justify:space-around,$gap:5px);
+		margin: 10px;
 		.button {
 			padding: 5px 10px;
 			font-size: 12pt;

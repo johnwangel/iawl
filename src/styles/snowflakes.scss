@@ -50,19 +50,22 @@
 .snowflake:first-of-type{
 	left:10%;animation-delay:1s
 }
-.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{
+.snowflake:first-of-type .inner,
+.snowflake:nth-of-type(8) .inner{
 	animation-delay:1s
 }
 .snowflake:nth-of-type(2){
 	left:20%;animation-delay:.5s
 }
-.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{
+.snowflake:nth-of-type(2) .inner,
+.snowflake:nth-of-type(6) .inner{
 	animation-delay:6s
 }
 .snowflake:nth-of-type(3){
 	left:30%;animation-delay:2s
 }
-.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{
+.snowflake:nth-of-type(11) .inner,
+.snowflake:nth-of-type(3) .inner{
 	animation-delay:4s
 }
 .snowflake:nth-of-type(4){

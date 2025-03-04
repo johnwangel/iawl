@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+import { SONGS } from '../helpers/lists.jsx'
 
 import LOGO from '../assets/iawl_logo.jpg'
 //import REEL from '../assets/iawl_reel.mp4'
@@ -9,11 +11,8 @@ import P3 from '../assets/photos/photo3.jpg'
 import P4 from '../assets/photos/photo4.jpg'
 import P5 from '../assets/photos/photo5.jpg'
 
-import S1 from '../assets/mp3/1-overture.mp3'
-import S2 from '../assets/mp3/20-wings.mp3'
-import S3 from '../assets/mp3/25-christmasday.mp3'
-
 import '../styles/home.scss'
+import '../styles/audio.scss'
 import '../styles/footer.scss'
 
 const imgs = [P1,P2,P3,P4,P5]
@@ -54,7 +53,6 @@ export function Main(props){
 				 </div>
 }
 
-
 function Controls(props){
 	const [active,changeActive] = useState(0)
 	const buttons = ['Photos','Music','Videos','About']
@@ -92,12 +90,57 @@ function Photo(props){
 
 function Music(props){
 	return	<div className='audio-container'>
-						<audio controls>
-						  <source src={S1} type="audio/mpeg" />
-							Your browser does not support the audio element.
-						</audio>
+						{SONGS.map((s,i)=><AudioPlayer key={i} item={s} />)}
 					</div>
 }
+
+function AudioPlayer(props) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const src = `/assets/mp3/${props.item.file}.mp3`
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    const handlePlay = () => setIsPlaying(true)
+    const handlePause = () => setIsPlaying(false)
+    const handleEnded = () => setIsPlaying(false)
+    const handleTimeUpdate = () => {}
+    const handleError = (error) => console.error("Audio error:", error);
+
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('error', handleError);
+
+    return () => {
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('timeupdate', handleTimeUpdate);
+      audio.removeEventListener('error', handleError);
+    };
+  }, [src]);
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+  };
+
+  return (
+    <div className='audio-player'>
+      <audio ref={audioRef} src={src} />
+      <div className={`audio-control ${isPlaying ? 'pause' : 'play'}`} onClick={togglePlay} />
+      <div className='audio-name'>{props.item.name}</div>
+    </div>
+  );
+}
+
 
 function Videos(props){
 	return <div className='videos-container'>Videos go here.</div>
@@ -113,7 +156,7 @@ function About(props){
 
 function Snowflakes(props){
 	return 	<div className="snowflakes" aria-hidden="true">
-						{ Array.from(Array(12).keys()).map((s,i)=><Snowflake n={i+1} />) }
+						{ Array.from(Array(12).keys()).map((s,i)=><Snowflake key={i} n={i+1} />) }
 					</div>
 }
 
