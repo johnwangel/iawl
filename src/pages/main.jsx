@@ -16,7 +16,6 @@ import '../styles/audio.scss'
 import '../styles/footer.scss'
 
 const imgs = [P1,P2,P3,P4,P5]
-const audio = [S1,S2,S3]
 
 export function Main(props){
 	return <div className='app-main'>
