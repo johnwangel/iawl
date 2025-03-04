@@ -132,9 +132,9 @@ function AudioPlayer(props) {
   };
 
   return (
-    <div className='audio-player'>
+    <div className={`audio-player${isPlaying?' active':''}`}  onClick={togglePlay}>
       <audio ref={audioRef} src={src} />
-      <div className={`audio-control ${isPlaying ? 'pause' : 'play'}`} onClick={togglePlay} />
+      <div className={`audio-control ${isPlaying ? 'pause' : 'play'}`} />
       <div className='audio-name'>{props.item.name}</div>
     </div>
   );
