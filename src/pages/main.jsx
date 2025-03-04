@@ -88,19 +88,29 @@ function Photo(props){
 }
 
 function Music(props){
-	return	<div className='audio-container'>
-						{SONGS.map((s,i)=><AudioPlayer key={i} item={s} />)}
-						<div className='audio-overlay'></div>
+	const [activeSong, changeActive] = useState(null);
+	const song = (activeSong) ? SONGS[activeSong-1].name : ''
+
+	return	<div className={`audio-container${activeSong?' noscroll':''}`}>
+
+						{SONGS.map((s,i)=><AudioPlayer key={i} playing={(i==activeSong-1)?true:false} id={i+1} item={s} change={changeActive} />)}
+						
+						<div className={`audio-overlay${activeSong?'':' hidden'}`}>
+							<div className='song-image'></div>		
+							<div className='song-title'>{song}</div>
+							<div className='song-close' onClick={()=>changeActive(null)}>Stop</div>
+						</div>
+
 					</div>
 }
 
 function AudioPlayer(props) {
-  const [isPlaying, setIsPlaying] = useState(false);
+	const [isPlaying,setIsPlaying] = useState(false)
   const audioRef = useRef(null);
-
   const src = `/assets/mp3/${props.item.file}.mp3`
 
   useEffect(() => {
+
     const audio = audioRef.current;
 
     const handlePlay = () => setIsPlaying(true)
@@ -115,6 +125,9 @@ function AudioPlayer(props) {
     audio.addEventListener('timeupdate', handleTimeUpdate);
     audio.addEventListener('error', handleError);
 
+    if (props.playing) audioRef.current.play()
+    if (!props.playing) audioRef.current.pause()
+
     return () => {
       audio.removeEventListener('play', handlePlay);
       audio.removeEventListener('pause', handlePause);
@@ -122,20 +135,23 @@ function AudioPlayer(props) {
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('error', handleError);
     };
-  }, [src]);
+  }, [src,props.playing]);
 
-  const togglePlay = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-  };
+
+
+  // const togglePlay = () => {
+  //   if (isPlaying) {
+  //     audioRef.current.pause();
+  //   } else {
+  //   	props.change(props.id);
+  //     audioRef.current.play();
+  //   }
+  // };
 
   return (
-    <div className={`audio-player${isPlaying?' active':''}`}  onClick={togglePlay}>
+    <div className={`audio-player${props.playing?' active':''}`} onClick={()=>props.change(props.id)}>
       <audio ref={audioRef} src={src} />
-      <div className={`audio-control ${isPlaying ? 'pause' : 'play'}`} />
+      <div className={`audio-control ${props.playing ? 'pause' : 'play'}`} />
       <div className='audio-name'>{props.item.name}</div>
     </div>
   );
