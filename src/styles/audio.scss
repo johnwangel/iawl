@@ -1,23 +1,29 @@
 @import 'mixins.scss';
 
 .audio-container {
+	position: relative;
 	overflow: auto;
 	width: 300px;
 	padding: 0;
 	background-color: $coolblue;
 	border-radius: 5px;
+	margin-bottom: 0;
 }
 
 .audio-player {
-	width: 100%;
+	padding: 2px 0;
+	width: calc(100% - 4px);
 	@include flex(flex,row,flex-start,center);
 	border-bottom: 1px solid $steelblue;
 	height: 30px;
 	cursor: pointer;
+
 	&:hover, &.active {
 		background-color: white;
 	}
+
 	.audio-name {
+		font-size: 14pt;
 		color: $steelblue;
 	}
 
@@ -30,10 +36,35 @@
 	color: $steelblue;
 }
 
-.audio-control.pause:before {
-	content: '\23f8';
-}
+// .audio-control.pause:before {
+// 	content: '\23f8';
+// }
+
 .audio-control.play:before {
 	content: '\23f5';
 }
 
+.audio-overlay {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: white;
+	z-index: 100;
+}
+
+@media screen and (max-width:500px) {
+
+	.audio-container {
+		width: 100%;
+
+	}
+
+	.audio-player{
+		&:hover {
+			background-color: unset;
+		}
+	}
+}

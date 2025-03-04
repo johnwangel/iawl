@@ -252,14 +252,14 @@
 	.button-container {
 		width: calc(100% - 20px);
 		@include flex($justify:space-around,$gap:5px);
-		margin: 10px;
+		margin: 15px 10px;
 		.button {
 			padding: 5px 10px;
 			font-size: 12pt;
 		}
 	}
 
-	.photo-container, .audio-container, .video-container, .about-container {
+	.photo-container, .video-container, .about-container {
 		margin-bottom: 25px;
 	}
 

@@ -90,6 +90,7 @@ function Photo(props){
 function Music(props){
 	return	<div className='audio-container'>
 						{SONGS.map((s,i)=><AudioPlayer key={i} item={s} />)}
+						<div className='audio-overlay'></div>
 					</div>
 }
 
