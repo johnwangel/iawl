@@ -89,14 +89,17 @@ function Photo(props){
 
 function Music(props){
 	const [activeSong, changeActive] = useState(null);
-	const song = (activeSong) ? SONGS[activeSong-1].name : ''
+
+	const info =  (activeSong) ? SONGS[activeSong-1] : null
+	const song = (info) ? info.name : ''
+	const img = (info) ? `/assets/photos/${info.img}.jpg` : ''
 
 	return	<div className={`audio-container${activeSong?' noscroll':''}`}>
 
 						{SONGS.map((s,i)=><AudioPlayer key={i} playing={(i==activeSong-1)?true:false} id={i+1} item={s} change={changeActive} />)}
 						
 						<div className={`audio-overlay${activeSong?'':' hidden'}`}>
-							<div className='song-image'></div>		
+							<div className='song-image-container'><img className='song-image' src={img} /></div>		
 							<div className='song-title'>{song}</div>
 							<div className='song-close' onClick={()=>changeActive(null)}>Stop</div>
 						</div>

@@ -1,16 +1,15 @@
 export const SONGS = [
-		{ name: 'Think Big', file: '3-thinkbig' },
-		{ name: 'Charleston', file: '5-charleston' },
-		{ name: 'This Old House', file: '6-house' },
-		{ name: 'Trouble', file: '7-trouble' },
-		{ name: 'Open Your Eyes', file: '9-eyes' },
-		{ name: 'Oahu Wahoo', file: '12-oahu' },
-		{ name: 'E Mangia', file: '14-mangia' },
-
-		{ name: "Can't Keep the Bailey Boys Down", file: '17-boys' },
-		{ name: 'Your White Knight', file: '18-knight' },
-		{ name: 'Angel Gets His Wings', file: '20-wings' },
-		{ name: 'Christmas Day', file: '25-christmasday' },
+		{ name: 'Think Big', file: '3-thinkbig', img: 'thinkbig2', desc: 'George, Mary, and Violet' },
+		{ name: 'Charleston', file: '5-charleston', img: 'charleston3', desc: 'Ensemble' },
+		{ name: 'This Old House', file: '6-house', img: 'gm-moon', desc: 'George and Mary' },
+		{ name: 'Trouble', file: '7-trouble', img: 'trouble', desc: 'Potter' },
+		{ name: 'Open Your Eyes', file: '9-eyes', img: 'openeyes3', desc: 'Mary' },
+		{ name: 'Oahu Wahoo', file: '12-oahu', img: 'oahu', desc: 'Bert and Ernie' },
+		{ name: 'E Mangia', file: '14-mangia', img: 'mangia2', desc: 'Martini' },
+		{ name: "Can't Keep the Bailey Boys Down", file: '17-boys', img: 'baileyboysb', desc: 'Bert, Ernie, Bank Tellers' },
+		{ name: 'Your White Knight', file: '18-knight', img: 'zuzu', desc: 'George and Zuzu' },
+		{ name: 'Angel Gets His Wings', file: '20-wings', img: 'angel', desc: 'Clarence' },
+		{ name: 'Christmas Day', file: '25-christmasday', img: 'christmas-family', desc: 'Ensemble' },
 	]
 
 		// { name: 'Overture', file: '1-overture' },
