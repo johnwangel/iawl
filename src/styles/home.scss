@@ -13,48 +13,99 @@
 	overflow: hidden;
 	border-radius: 5px;
 	width: calc(100% - 10%);
-	@include flex(column);
 	background-color: rgba(255, 255, 255, 0.2);
 	z-index: 1;
-	margin: 0 5%;
-	margin-bottom: 50px;
+	margin: 15px 5%;
+
+	.hero {
+		width: 100%;
+		display: grid;
+		grid-template-rows: 100%;
+		grid-template-columns: 1fr 2fr 1fr;
+		gap: 50px;
+
+	  .au-cont {
+
+	  	&.left>* {
+				text-align: right;
+	  	}
+
+	  	&.right>* {
+				text-align: left;
+	  	}
+
+	  	position: relative;
+	  	@include flex($dir:column);
+
+	  	.super-title {
+	  		width: 100%;
+	  		font-size: 20pt;
+	  		text-transform: uppercase;
+	  		color: white;
+	  	}
+
+	  	.author {
+	  		text-transform: uppercase;
+	  		width: 100%;
+	  		font-size: 32pt;
+	  		color: white;
+	  		line-height: 40pt;
+	  	}
+
+	  }
+
+		.photo-group {
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.img-base {
+			z-index: 10;
+		}
+
+		.img-overlay {
+			position: absolute;
+			top: -15%;
+			left: 0;
+			z-index: 20;
+		}
+
+		#text1 {
+			animation: .75s ease-in-out 0s slideInFromLeft;
+		}
+		#text2 {
+			animation: 1.25s ease-in-out 0s slideInFromRight;
+		}
+		#text3 {
+			animation: 1.75s ease-in-out 0s slideInFromBottom;
+		}
+		#text4 {
+			animation: 5s ease-in-out 0s slideInFromRight;
+		}
+		#moon1 {
+			animation: 4s ease-in-out 0s slideInFromTop;
+			z-index: 15;
+		}
+
+	}
+
+}
+
+.au-cont.left {
+	animation: 5.5s ease-in-out 0s slideInFromLeft;
+}
+
+.au-cont.right{
+	animation: 5.5s ease-in-out 0s slideInFromRight; 
 }
 
 .authors {
-	width: calc(100% - 20vw);
-	padding: 50px 8% 0 10vw;
-  @include flex($justify:space-between);
-
-  .au-cont {
-
-  	&.left {
-  		animation: 1.5s ease-in-out 0s slideInFromLeft;
-  	}
-
-  	&.right{
-  		animation: 1.5s ease-in-out 0s slideInFromRight;
-  	}
-
-  	position: relative;
-  	@include flex($dir:column);
-  	.super-title {
-  		text-align: center;
-  		width: 100%;
-  		font-size: 20pt;
-  		text-transform: uppercase;
-  		color: white;
-  	}
-
-  	.author {
-  		text-transform: uppercase;
-  		text-align: center;
-  		width: 100%;
-  		font-size: 32pt;
-  		color: white;
-  	}
-
-  }
-
+	display: none;
 }
 
 .ack {
@@ -66,7 +117,7 @@
 	text-align: center;
 	font-size: 24pt;
 	line-height: 32pt;
-	animation: 1.5s ease-in-out 0s slideInFromBottom;
+	animation: 5.5s ease-in-out 0s slideInFromBottom;
 	z-index: 10;
 	margin-bottom: 50px;
 }
@@ -151,6 +202,47 @@
 
 @media screen and (max-width:1024px) {
 
+		.op-container .hero {
+			grid-template-columns: 100%;
+			.au-cont {
+				display: none;
+			}
+		}
+
+		.authors {
+			width: 100%;
+			margin-top: 15px;
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-template-columns: 1fr 1fr;
+			gap: 25px;
+
+			.au-cont {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				&>* {
+					color: white;
+					text-align: center;
+				}
+				.super-title {
+					font-size: 15pt;
+					line-height: 20pt;
+				}
+				.author {
+					font-size: 20pt;
+					line-height: 25pt;
+				}
+			}
+		}
+
+		.ack {
+			font-size: 15pt;
+			line-height: 22pt;
+			padding-bottom: 10px
+		}
+
 		.logo-container {
 			@include flex($dir:column);
 	  	width: 100vw;
@@ -198,12 +290,6 @@
 			  }
 		}
 
-		.ack {
-			width: 90%;
-			font-size: 18pt;
-			line-height: 25pt;
-		}
-
 }
 
 @media screen and (max-width:500px) {
@@ -212,29 +298,27 @@
 		height: 35vh;
 		width: unset;
 		object-fit: cover;
-
 	}
 
-	.authors {
-		width: 100%;
-		padding: 0;
-		@include flex($dir:column);
-		.au-cont {
-			padding-top: 25px;
-			.super-title {
-				font-size: 12pt;
-			}
-			.author {
-				font-size: 20pt;
-			}
+	.authors .au-cont {
+		.super-title {
+			font-size: 9pt;
+			line-height: 12pt;
+
+		}
+		.author {
+			font-size: 12pt;
+			line-height: 18pt;
+
 		}
 	}
 
 	.ack {
-		width: calc(100% - 20vw);
-		padding: 25px 10vw;
-		font-size: 15pt;
-		line-height: 22pt;
+		width: calc(100% - 50px);
+		font-size: 9pt;
+		line-height: 14pt;
+		margin: 0;
+		padding: 25px;
 	}
 
 	.quote, .attr {
