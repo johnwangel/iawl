@@ -210,12 +210,12 @@
 		}
 
 		.authors {
-			width: 100%;
-			margin-top: 15px;
+			width: calc(100% - 20px);
+			margin: 15px 10px;
+			
 			display: grid;
 			grid-template-rows: 1fr;
 			grid-template-columns: 1fr 1fr;
-			gap: 25px;
 
 			.au-cont {
 				display: flex;
@@ -224,13 +224,25 @@
 				align-items: center;
 				&>* {
 					color: white;
+					//text-align: center;
+				}
+
+				&.left>* {
 					text-align: center;
 				}
+
+				&.right>* {
+					text-align: center;
+				}
+
 				.super-title {
+					width: 100%;
 					font-size: 15pt;
 					line-height: 20pt;
 				}
 				.author {
+					white-space: nowrap;
+					width: 100%;
 					font-size: 20pt;
 					line-height: 25pt;
 				}
@@ -240,7 +252,7 @@
 		.ack {
 			font-size: 15pt;
 			line-height: 22pt;
-			padding-bottom: 10px
+			padding: 15px 0;
 		}
 
 		.logo-container {
@@ -301,24 +313,26 @@
 	}
 
 	.authors .au-cont {
+		width: calc(100% - 20px);
+		margin: 15px 10px;
+
 		.super-title {
-			font-size: 9pt;
-			line-height: 12pt;
+			font-size: 12pt;
+			line-height: 16pt;
 
 		}
 		.author {
-			font-size: 12pt;
-			line-height: 18pt;
+			font-size: 16pt;
+			line-height: 22pt;
 
 		}
 	}
 
 	.ack {
-		width: calc(100% - 50px);
-		font-size: 9pt;
-		line-height: 14pt;
-		margin: 0;
-		padding: 25px;
+		padding: 15px;
+		width: calc(100% - 30px);
+		font-size: 12pt;
+		line-height: 17pt;
 	}
 
 	.quote, .attr {

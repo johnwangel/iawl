@@ -49,12 +49,12 @@ export function Main(props){
 							<div className='authors'>
 
 								<div className='au-cont left'>
-									<div className='super-title'> Music By:</div>
+									<div className='super-title'> Music:</div>
 									<div className='author'>Andrew Abrams</div>
 								</div>
 
 								<div className='au-cont right'>
-									<div className='super-title'> Book &amp; Lyrics By:</div>
+									<div className='super-title'> Book &amp; Lyrics:</div>
 									<div className='author'> John W. Atkins </div>
 								</div>
 
