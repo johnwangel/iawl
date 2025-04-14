@@ -76,19 +76,19 @@
 		}
 
 		#text1 {
-			animation: .75s ease-in-out 0s slideInFromLeft;
+			animation: 1.5s ease-out 0s slideInFromLeft;
 		}
 		#text2 {
-			animation: 1.25s ease-in-out 0s slideInFromRight;
+			animation: 2s ease-out 0s slideInFromRight;
 		}
 		#text3 {
-			animation: 1.75s ease-in-out 0s slideInFromBottom;
+			animation: 4s ease-out 0s slideInFromLeft;
 		}
 		#text4 {
-			animation: 5s ease-in-out 0s slideInFromRight;
+			animation: 11s ease-out 0s slideInFromRight;
 		}
 		#moon1 {
-			animation: 4s ease-in-out 0s slideInFromTop;
+			animation: 10s ease-out 0s slideInFromTop;
 			z-index: 15;
 		}
 
