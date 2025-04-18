@@ -1,21 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 
-import { SONGS } from '../helpers/lists.jsx'
+import { SONGS, PHOTOS } from '../helpers/lists.jsx'
 
 import LOGO from '../assets/iawl_logo.jpg'
 //import REEL from '../assets/iawl_reel.mp4'
 
-import P1 from '../assets/photos/photo1.jpg'
-import P2 from '../assets/photos/photo2.jpg'
-import P3 from '../assets/photos/photo3.jpg'
-import P4 from '../assets/photos/photo4.jpg'
-import P5 from '../assets/photos/photo5.jpg'
-
 import '../styles/home.scss'
 import '../styles/audio.scss'
 import '../styles/footer.scss'
-
-const imgs = [P1,P2,P3,P4,P5]
+import '../styles/photos.scss'
 
 export function Main(props){
 	return <div className='app-main'>
@@ -30,14 +23,7 @@ export function Main(props){
 									<div className='author'>Andrew Abrams</div>
 								</div>
 
-								<div className='photo-group'>
-									<img className='img-base' src='./assets/photos/logo_bg.png' />
-									<img className='img-overlay' id='text1' src='./assets/photos/logo_text1.png' />
-									<img className='img-overlay' id='text2' src='./assets/photos/logo_text2.png' />
-									<img className='img-overlay' id='text3' src='./assets/photos/logo_text3.png' />
-									<img className='img-overlay' id='text4' src='./assets/photos/logo_text4.png' />
-									<img className='img-overlay' id='moon1' src='./assets/photos/logo_moon.png' />
-								</div>
+								<div className='photo-group'></div>
 
 								<div className='au-cont right'>
 									<div className='super-title'> Book &amp; Lyrics By:</div>
@@ -60,20 +46,13 @@ export function Main(props){
 
 							</div>
 							<div className='ack'>
-								<i>It's A Wonderful Life</i> is based on the story 'The Greatest Gift' by Philip Van Doren Stern.
-						   'The Greatest Gift' is used by permission of The Greatest Gift Corporation.
+								<p><i>It's A Wonderful Life</i> is based on the story 'The Greatest Gift' by Philip Van Doren Stern.
+						   'The Greatest Gift' is used by permission of The Greatest Gift Corporation.</p>
 							</div>
 					</div>
 
-					<div className='op-container'>
-						<iframe 
-							src="https://www.youtube.com/embed/8fkg26pBR14?si=kDBGQlmFUDbtFtTR" 
-							title="YouTube video player" 
-							frameBorder="0" 
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-							referrerPolicy="strict-origin-when-cross-origin" 
-							allowFullScreen>
-						</iframe>
+					<div className='op-container video'>
+						<Sizzle />
 					</div>
 
 					<div className='op-container'><Controls /></div>
@@ -112,13 +91,17 @@ export function Quote(props){
 
 function Photos(props){
 	return	<div className='photo-container'>
-						{ imgs.map((n,i)=><Photo key={i} img={n} />) }
+						{ PHOTOS.map(p=><Photo key={Math.random()} item={p} />  )}
 					</div>
 }
 
 function Photo(props){
-	return <div className='photo'><img src={props.img} /></div>
+	return <div className='photo'>
+					<img src={`/assets/photos/${props.item.file}`} />
+					<div className='caption'>{props.item.caption}</div>
+				</div>
 }
+
 
 function Music(props){
 	const [activeSong, changeActive] = useState(null);
@@ -195,22 +178,26 @@ function AudioPlayer(props) {
 
 
 function Videos(props){
-	return <div className='videos-container'>
-					<iframe width="560" height="315" 
-						src="https://www.youtube.com/embed/8fkg26pBR14?si=kDBGQlmFUDbtFtTR" 
-						title="YouTube video player" frameborder="0" 
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-						referrerpolicy="strict-origin-when-cross-origin" 
-						allowfullscreen>
-					</iframe>
-				</div>
+	return <Sizzle />
 }
 
 function About(props){
 	return	<div className='about-container'>
 						<div className='description'>
-							The timeless Christmas classic is brought to life onstage with all the familiar moments you cherish, 
-							and a lot of new surprises along the way.
+							<div className='headline'>The Beloved Christmas-Film Classic</div>
+							<div className='headline'>Brought to sLife Onstage</div>
+							<p>All the characters you know and love are here &ndash; GEORGE and MARY BAILEY, 
+								   BERT and ERNIE, SAM WAINWRIGHT. POTTER, the villain you love to hate. 
+								   And of couse CLARENCE the Angel. You'll experience all the cherished moments of JOY and HEARTBREAK. 
+								   The iconic one-liners. Plus a lot of new surprises that only live theater can provide.</p>
+							<p>With an exciting new musical score that celebrates the music of the era. 
+								 And a crowd-pleasing finale that might just become a Christmas standard of its own.</p>
+							<p><i>It's a Wonderful Life</i> had its WORLD PREMIER in 2024, produced by the <a href='https://capitalcitytheatre.org/'>Captiol City Theatre</a> in Madison, Wisconsin. 
+							   Featuring a knockout cast, the show had audiences on their feet and begging for a return to make this show
+							   a new holiday tradition.</p>
+							<div className='headline'>The Creators</div>
+							<p>ANDREW ABRAMS (Music)</p>
+							<p>JOHN ATKINS (Book & Lyrics)</p>
 						</div>
 					</div>
 }
@@ -225,6 +212,20 @@ function Snowflake(props){
 	const size = props.n%4 ? 'small' : props.n%3 ? 'medium' : props.n%2 ? 'large' :  'extra-large'
 	return <div className="snowflake">
 					<div className={`inner ${size}`}>❅</div>
+				</div>
+}
+
+
+function Sizzle(props){
+	return <div className='video-container'>
+							<iframe 
+								src="https://www.youtube.com/embed/8fkg26pBR14?si=kDBGQlmFUDbtFtTR?autoplay=1" 
+								title="YouTube video player" 
+								frameBorder="0" 
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+								referrerPolicy="strict-origin-when-cross-origin" 
+								allowFullScreen>
+							</iframe>
 				</div>
 }
 

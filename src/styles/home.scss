@@ -1,6 +1,13 @@
 @import 'mixins.scss';
 @import 'snowflakes.scss';
 
+a {
+	text-decoration: underline;
+	&:visited, &:hover, &:link, &:active {
+		color: $coolblue;
+	}
+}
+
 .app-main {
   display: flex;
   flex-direction: column;
@@ -96,6 +103,29 @@
 
 }
 
+.op-container.video {
+	@include flex();
+}
+
+.video-container {
+	@include flex();
+	width: calc(100% - 20px);
+	padding: 10px;
+	margin: 0;
+	iframe {
+		height: 500px;
+		width: 895px;
+		@media screen and (max-width:1250px) {
+			width: 700px;
+			height: 392px;
+		}
+		@media screen and (max-width:500px) {
+			width: 300px;
+			height: 168px;
+		}
+	}
+}
+
 .au-cont.left {
 	animation: 5.5s ease-in-out 0s slideInFromLeft;
 }
@@ -109,6 +139,7 @@
 }
 
 .ack {
+	@include flex();
 	width: calc(100% - 30%);
 	background-color: transparent;
 	position: relative;
@@ -148,11 +179,27 @@
 }
 
 .description {
-	width: 60%;
+	max-width: 50%;
+	margin: 0 25px;
+	padding: 25px 50px;
 	color: white;
 	font-size: 25pt;
 	line-height: 35pt;
-	margin-top: 20px;
+	background-color: $steelblue;
+	color: $lightblue;
+	overflow: auto;
+	p {
+		font-size: 18pt;
+		line-height: 22pt;
+		margin-bottom: 10px;
+	}
+	.headline {
+		text-align: center;
+		font-size: 24pt;
+		line-height: 34pt;
+		color: white;
+		text-transform: uppercase;
+	}
 }
 
 .photo-container{
@@ -186,14 +233,14 @@
 	color: $coolblue;
 }
 
-.videos-container, .about-container {
+.about-container {
 	@include flex(flex,column,flex-start,center);
 	width: 100%;
 	height: 355px;
 	color: white;
 	font-size:  24pt;
 	margin-bottom: 50px;
-
+	border: 2px solid $lightblue;
 }
 
 .video-container {
@@ -252,9 +299,14 @@
 		}
 
 		.ack {
-			font-size: 15pt;
-			line-height: 22pt;
-			padding: 15px 0;
+			padding: 0;
+			width: 100%;
+			p {
+				font-size: 15pt;
+				line-height: 22pt;
+				padding: 0 15%;
+			}
+
 		}
 
 		.logo-container {
@@ -304,6 +356,14 @@
 			  }
 		}
 
+		.about-container .description {
+			max-width: 100%;
+			p {
+				font-size: 24pt;
+				line-height: 32pt;
+			}
+		}
+
 }
 
 @media screen and (max-width:500px) {
@@ -331,10 +391,12 @@
 	}
 
 	.ack {
-		padding: 15px;
-		width: calc(100% - 30px);
-		font-size: 12pt;
-		line-height: 17pt;
+		padding: 15px 0;
+		width: 100%;
+		p {
+			font-size: 12pt;
+		  line-height: 17pt;
+		}
 	}
 
 	.quote, .attr {
@@ -359,9 +421,39 @@
 		}
 	}
 
-	.photo-container, .video-container, .about-container {
-		width: 50%;
+	.photo-container, .about-container {
+		width: 90%;
 		margin-bottom: 25px;
+	}
+
+	.video-container {
+		width: 90%;
+	}
+
+	.about-container {
+
+		.description {
+			height: 100%;
+			padding: 20px; 
+			margin: 0; 
+			font-size: 12pt;
+			line-height: 18pt;
+
+				.headline {
+					text-align: center;
+					font-size: 15pt;
+					line-height: 22pt;
+					color: white;
+					text-transform: uppercase;
+				}
+
+				p {
+					font-size: 14pt;
+					line-height: 20pt;
+				}
+
+		}
+		
 	}
 
 }
