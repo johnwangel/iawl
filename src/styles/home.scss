@@ -207,7 +207,7 @@ a {
 	overflow: auto;
 	margin: 0 5% 50px;
 	height: 355px;
-	@include flex(flex,row,flex-start,center,nowrap,10px);
+	@include flex(flex,row,flex-start,center,nowrap,30px);
 }
 
 .audio-container {
@@ -240,7 +240,10 @@ a {
 	color: white;
 	font-size:  24pt;
 	margin-bottom: 50px;
-	border: 2px solid $lightblue;
+	.description {
+		border: 2px solid $lightblue;
+	}
+	
 }
 
 .video-container {

@@ -23,7 +23,15 @@ export function Main(props){
 									<div className='author'>Andrew Abrams</div>
 								</div>
 
-								<div className='photo-group'></div>
+								<div className='photo-group'>
+									<img className='img-base' src='./assets/photos/logo_bg.png' />
+									<img className='img-overlay' id='text1' src='./assets/photos/logo_text1.png' />
+									<img className='img-overlay' id='text2' src='./assets/photos/logo_text2.png' />
+									<img className='img-overlay' id='text3' src='./assets/photos/logo_text3.png' />
+									<img className='img-overlay' id='text4' src='./assets/photos/logo_text4.png' />
+									<img className='img-overlay' id='moon1' src='./assets/photos/logo_moon.png' />
+								</div>
+
 
 								<div className='au-cont right'>
 									<div className='super-title'> Book &amp; Lyrics By:</div>
