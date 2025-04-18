@@ -65,6 +65,17 @@ export function Main(props){
 							</div>
 					</div>
 
+					<div className='op-container'>
+						<iframe 
+							src="https://www.youtube.com/embed/8fkg26pBR14?si=kDBGQlmFUDbtFtTR" 
+							title="YouTube video player" 
+							frameBorder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							referrerPolicy="strict-origin-when-cross-origin" 
+							allowFullScreen>
+						</iframe>
+					</div>
+
 					<div className='op-container'><Controls /></div>
 
 					<Quote quote=" . . . doesn&rsquo;t merely transpose Frank Capra's beloved film to the stage - it reimagines it with a theatrical flourish all its own." attr='Broadway World' />
@@ -76,15 +87,15 @@ export function Main(props){
 
 function Controls(props){
 	const [active,changeActive] = useState(0)
-	const buttons = ['Photos','Music','Videos','About']
+	const buttons = ['About','Photos','Music','Videos']
 	return  <div className='controls-container'>
 						<div className='button-container'>
 							{ buttons.map((b,i)=><Button key={i} id={i} name={b} active={active==i} click={changeActive} />)}
 					  </div>
-						{ active===0 ? <Photos /> : null }
-						{ active===1 ? <Music /> : null }
-						{ active===2 ? <Videos /> : null }
-						{ active===3 ? <About /> : null }
+					  { active===0 ? <About /> : null }
+						{ active===1 ? <Photos /> : null }
+						{ active===2 ? <Music /> : null }
+						{ active===3 ? <Videos /> : null }
 					</div>
 }
 
@@ -184,7 +195,15 @@ function AudioPlayer(props) {
 
 
 function Videos(props){
-	return <div className='videos-container'>Videos go here.</div>
+	return <div className='videos-container'>
+					<iframe width="560" height="315" 
+						src="https://www.youtube.com/embed/8fkg26pBR14?si=kDBGQlmFUDbtFtTR" 
+						title="YouTube video player" frameborder="0" 
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+						referrerpolicy="strict-origin-when-cross-origin" 
+						allowfullscreen>
+					</iframe>
+				</div>
 }
 
 function About(props){
@@ -192,8 +211,6 @@ function About(props){
 						<div className='description'>
 							The timeless Christmas classic is brought to life onstage with all the familiar moments you cherish, 
 							and a lot of new surprises along the way.
-
-
 						</div>
 					</div>
 }

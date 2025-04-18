@@ -148,9 +148,11 @@
 }
 
 .description {
+	width: 60%;
 	color: white;
-	font-size: 18pt;
-	line-height: 24pt;
+	font-size: 25pt;
+	line-height: 35pt;
+	margin-top: 20px;
 }
 
 .photo-container{
@@ -358,6 +360,7 @@
 	}
 
 	.photo-container, .video-container, .about-container {
+		width: 50%;
 		margin-bottom: 25px;
 	}
 
