@@ -193,7 +193,7 @@ function About(props){
 	return	<div className='about-container'>
 						<div className='description'>
 							<div className='headline'>The Beloved Christmas-Film Classic</div>
-							<div className='headline'>Brought to sLife Onstage</div>
+							<div className='headline'>Brought to Life Onstage</div>
 							<p>All the characters you know and love are here &ndash; GEORGE and MARY BAILEY, 
 								   BERT and ERNIE, SAM WAINWRIGHT. POTTER, the villain you love to hate. 
 								   And of couse CLARENCE the Angel. You'll experience all the cherished moments of JOY and HEARTBREAK. 
