@@ -1,11 +1,5 @@
 export const SONGS = [
 		{ name: 'Think Big', file: '3-thinkbig', img: 'thinkbig2', desc: 'George, Mary, and Violet' },
-		{ name: 'Charleston', file: '5-charleston', img: 'charleston3', desc: 'Ensemble' },
-		{ name: 'This Old House', file: '6-house', img: 'gm-moon', desc: 'George and Mary' },
-		{ name: 'Trouble', file: '7-trouble', img: 'trouble', desc: 'Potter' },
-		{ name: 'Open Your Eyes', file: '9-eyes', img: 'openeyes3', desc: 'Mary' },
-		{ name: 'Oahu Wahoo', file: '12-oahu', img: 'oahu', desc: 'Bert and Ernie' },
-		{ name: 'E Mangia', file: '14-mangia', img: 'mangia2', desc: 'Martini' },
 		{ name: "Can't Keep the Bailey Boys Down", file: '17-boys', img: 'baileyboysb', desc: 'Bert, Ernie, Bank Tellers' },
 		{ name: 'Your White Knight', file: '18-knight', img: 'zuzu', desc: 'George and Zuzu' },
 		{ name: 'Angel Gets His Wings', file: '20-wings', img: 'angel', desc: 'Clarence' },
@@ -25,6 +19,13 @@ export const PHOTOS = [
 		{ file: 'zuzu.jpg', caption: "Zuzu's prize rose  - 1946" },
 		{ file: 'angel.jpg', caption: 'Clarence (before he got his wings)' },
 	]
+
+		// { name: 'Oahu Wahoo', file: '12-oahu', img: 'oahu', desc: 'Bert and Ernie' },
+		// { name: 'E Mangia', file: '14-mangia', img: 'mangia2', desc: 'Martini' },
+		// { name: 'Charleston', file: '5-charleston', img: 'charleston3', desc: 'Ensemble' },
+		// { name: 'This Old House', file: '6-house', img: 'gm-moon', desc: 'George and Mary' },
+		// { name: 'Trouble', file: '7-trouble', img: 'trouble', desc: 'Potter' },
+		// { name: 'Open Your Eyes', file: '9-eyes', img: 'openeyes3', desc: 'Mary' },
 		// { name: 'Overture', file: '1-overture' },
 		// { name: "It's a Wonderful Life", file: '22-iawl' },
 		// { name: 'I Forget', file: '8-forget' },
