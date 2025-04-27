@@ -59,8 +59,8 @@ export function Main(props){
 							</div>
 					</div>
 
-					<div className='op-container video'>
-						<Sizzle />
+					<div className='op-container video' >
+						<Video src='https://www.youtube.com/embed/GBO5AVAd9gI?si=NtBZxcLRVvcndeJP'/>
 					</div>
 
 					<div className='op-container'><Controls /></div>
@@ -109,7 +109,6 @@ function Photo(props){
 					<div className='caption'>{props.item.caption}</div>
 				</div>
 }
-
 
 function Music(props){
 	const [activeSong, changeActive] = useState(null);
@@ -186,7 +185,7 @@ function AudioPlayer(props) {
 
 
 function Videos(props){
-	return <Sizzle />
+	return <Sizzle src='https://www.youtube.com/embed/8fkg26pBR14?si=kDBGQlmFUDbtFtTR?autoplay=1'/>
 }
 
 function About(props){
@@ -224,10 +223,10 @@ function Snowflake(props){
 }
 
 
-function Sizzle(props){
+function Video(props){
 	return <div className='video-container'>
 							<iframe 
-								src="https://www.youtube.com/embed/8fkg26pBR14?si=kDBGQlmFUDbtFtTR?autoplay=1" 
+								src={props.src}
 								title="YouTube video player" 
 								frameBorder="0" 
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
