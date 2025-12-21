@@ -20,9 +20,13 @@ a {
 	overflow: hidden;
 	border-radius: 5px;
 	width: calc(100% - 10%);
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: $white;
 	z-index: 1;
 	margin: 15px 5%;
+
+	&.full {
+		background-color: transparent;
+	}
 
 	.hero {
 		width: 100%;
@@ -30,8 +34,12 @@ a {
 		grid-template-rows: 100%;
 		grid-template-columns: 1fr 2fr 1fr;
 		gap: 50px;
+		background-color: transparent;
 
 	  .au-cont {
+	  	&>* {
+	  		font-family: $headings;
+	  	}
 
 	  	&.left>* {
 				text-align: right;
@@ -103,6 +111,36 @@ a {
 
 }
 
+.op-text-body {
+
+	@include flex($dir:column);
+	padding: 50px;
+
+	.body {
+		display: flex;
+		height: auto;
+		gap: 3rem;
+		position: relative;
+		margin-top: 25px;
+		max-width: 50%;
+		&.column {
+			display: flex;
+			flex-direction: column;
+			flex:1;
+			padding: 10px;
+		}
+		p {
+			font-size: 14pt;
+			margin-top: 0;
+			margin-bottom: 1em;
+			text-align: justify;
+		}
+	}
+
+}
+
+
+
 .op-container.video {
 	@include flex();
 }
@@ -140,17 +178,16 @@ a {
 
 .ack {
 	@include flex();
-	width: calc(100% - 30%);
-	background-color: transparent;
+	width: 70%;
+	background-color: $blue;
 	position: relative;
 	color: white;
-	padding: 50px 15%;
+	padding: 10px 15%;
 	text-align: center;
 	font-size: 24pt;
 	line-height: 32pt;
 	animation: 5.5s ease-in-out 0s slideInFromBottom;
 	z-index: 10;
-	margin-bottom: 50px;
 }
 
 .controls-container {
@@ -214,23 +251,6 @@ a {
 	@include flex(flex,column,flex-start,center);
 	height: 355px;
 	margin-bottom: 50px;
-}
-
-.quote {
-	padding: 50px 100px 0;
-	text-align: center;
-	color: white;
-	text-transform: uppercase;
-	font-size: 30pt;
-	color: $coolblue;
-}
-
-.attr {
-	padding: 0 100px 50px;
-	text-align: right;
-	text-transform: uppercase;
-	font-size: 22pt;
-	color: $coolblue;
 }
 
 .about-container {

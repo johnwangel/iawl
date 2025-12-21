@@ -1,0 +1,83 @@
+@import 'mixins.scss';
+.text-quote {
+	position: relative;
+	width: 90%;
+	border: 2px solid $blue;
+	border-radius: 25px;
+	padding: 30px;
+	margin: 20px 0;
+	font-size: 18pt;
+	text-align: justify;
+	break-inside: avoid;
+
+	&::before, &::after {
+	 	position: absolute;
+	 	background-color: $white;
+	 	color: $blue;
+		font-size: 65pt;
+		font-weight: 800;
+		line-height: 40pt;
+	}
+
+	&::before {
+		content: '\201c';
+		top: -10px;
+		left: 0;
+	}
+
+	&::after {
+		content: '\201d';
+		color: $blue;
+		bottom: -35px;
+		right: 0;
+	}
+
+	.quote {
+		font-weight: 600;
+		color: $blue;
+
+	}
+
+	.attr {
+		@include flex();
+		font-size: 14pt;
+		line-height: 20pt;
+		color: $blue;
+	}
+
+	&.dark {
+		background-color: $blue;
+		&>* {
+		 color: $lightblue;
+		}
+		.quote {
+			border-top: 2px solid $iceblue;
+			padding-top: 25px;
+		}
+		.attr {
+			border-bottom: 2px solid $iceblue;
+			padding-bottom: 25px;
+		}
+
+		&::before, &::after {
+		 	background-color: $blue;
+		 	color: $iceblue;
+		}
+
+		&::before {
+			top: 10px;
+			left: 20pt;
+			line-height: 40pt;
+		}
+
+		&::after {
+			bottom: 0;
+			right: 20pt;
+			line-height: 40pt;
+		}
+
+
+		
+	}
+
+}

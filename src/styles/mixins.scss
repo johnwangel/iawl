@@ -4,6 +4,14 @@ $aqua: #baf2ef;
 $coolblue: #a2d2df;
 $steelblue: #257ca3;
 
+$blue: #014a69;
+$yellow: #ddb15a;
+$white: #fafaf5;
+
+$headings: 'Libre Bodoni';
+$bodytext: 'Cormorant Garamond';
+$quotes: 'Source Serif 4';
+
 
 @mixin flex($display:flex,$dir:row,$justify:center,$align:center,$wrap:nowrap,$gap:0) {
   display: $display;

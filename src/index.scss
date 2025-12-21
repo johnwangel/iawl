@@ -1,14 +1,14 @@
 @import './styles/mixins';
 
 :root {
-  font-family: system-ui, 'Playfair Display', Helvetica, Arial, sans-serif;
+  font-family: $bodytext, Helvetica, Arial, sans-serif;
   font-size: 12pt;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: black;
+  background-color: $white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,10 +32,11 @@ body {
   min-width: 100vw;
   margin: 0;
   padding: 0;
-  background-color: $iceblue;
+  background-color: $white;
 }
 
 h1 {
+  font-family: $headings;
   font-size: 3.2em;
   line-height: 1.1;
 }
@@ -80,7 +81,8 @@ button:focus-visible {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: $iceblue;
+  background-color: $blue;
+  color: black;
 }
 
 .app-header {

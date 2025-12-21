@@ -1,0 +1,40 @@
+@import 'mixins.scss';
+
+.listItem {
+	margin-bottom: 15px;
+	.listHead {
+		color: $blue;
+		text-transform: uppercase;
+		font-size: 18pt;
+		border-bottom: 1px solid $yellow;
+		padding-bottom: 2px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+}
+
+span.song {
+	color: $blue;
+	font-weight: 800;
+}
+
+.castItem {
+	font-size: 12pt;
+	width: 100%;
+	color: $blue;
+	@include flex($justify:space-between);
+	.name, .role {
+		white-space: nowrap;
+	}
+	.name {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.dots {
+	  width: 100%;
+	  min-width: 30px;
+	  background: radial-gradient(circle at 50% 0.8em, $yellow 8%, transparent 8%);
+	  background-size: 0.5em;
+	  background-repeat: repeat-x;
+	}
+}
