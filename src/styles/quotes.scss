@@ -76,8 +76,24 @@
 			line-height: 40pt;
 		}
 
+	}
 
-		
+
+	@media screen and (max-width:500px) {
+		padding: 25px;
+		text-align: left;
+		width: calc(100% - 50px);
+		.quote, {
+			padding: 0;
+			margin-top: 5px;
+		}
+		.attr {
+			padding: 0;
+		}
+
+		&.dark {
+			padding: 25px;
+		}
 	}
 
 }

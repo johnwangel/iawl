@@ -137,9 +137,21 @@ a {
 		}
 	}
 
+	@media screen and (max-width:500px) {
+		padding: 5px;
+
+		.body {
+			max-width: unset;
+		}
+
+	}
+
+
 }
 
-
+.op-container.main {
+		padding-top: 25px;
+}
 
 .op-container.video {
 	@include flex();
@@ -197,8 +209,6 @@ a {
 
 .button-container {
 	@include flex(flex,row,center,center,nowrap,20px);
-	margin-top: 50px;
-	margin-bottom: 25px;
 	.button {
 		background-color: $lightblue;
 		border: 1px solid $lightblue;
@@ -207,6 +217,8 @@ a {
 		color: $steelblue;
 		font-size: 16pt;
 		cursor: pointer;
+		text-transform: uppercase;
+		font-weight: bold;
 		&:hover, &.active {
 			background-color: $steelblue;
 			color: $lightblue;
@@ -269,7 +281,7 @@ a {
 .video-container {
 	width: 100%;
 	z-index: 100;
-	animation: 1s ease-in-out 0s slideInFromTop;
+	//animation: 1s ease-in-out 0s slideInFromTop;
 }
 
 @media screen and (max-width:1024px) {
@@ -391,6 +403,15 @@ a {
 
 @media screen and (max-width:500px) {
 
+	.op-container {
+		width: 95%;
+	}
+
+	.op-container.controls {
+		margin: 0;
+		padding: 0;
+	}
+
 	.app-main .logo-container img.expand-img {
 		height: 35vh;
 		width: unset;
@@ -416,7 +437,7 @@ a {
 	.ack {
 		padding: 15px 0;
 		width: 100%;
-		p {
+		div {
 			font-size: 12pt;
 		  line-height: 17pt;
 		}
@@ -435,9 +456,9 @@ a {
 	}
 
 	.button-container {
-		width: calc(100% - 20px);
-		@include flex($justify:space-around,$gap:5px);
-		margin: 15px 10px;
+		width: 100%;
+		@include flex($justify:center,$wrap:wrap,$gap:5px);
+		margin: 5px 10px 0;
 		.button {
 			padding: 5px 10px;
 			font-size: 12pt;

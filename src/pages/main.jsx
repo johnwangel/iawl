@@ -13,28 +13,37 @@ import '../styles/photos.scss'
 import '../styles/quotes.scss'
 import '../styles/lists.scss'
 
+
 export function Main(props){
+	const vcomponents = [
+		{ name: 'videos', comp: Videos },
+		{ name: 'about', comp: About },
+		{ name: 'script', comp: Script },
+		{ name: 'music', comp: Music },
+		{ name: 'creative', comp: Creative }
+	]
+
 	return <div className='app-main'>
 					<Snowflakes />
 					<Hero />
-					<div className='op-container'><Controls /></div>
+					<div className='op-container main'>
+						<Controls list={ vcomponents} />
+					</div>
 					<Footer />
 				 </div>
 }
 
 function Controls(props){
-	const [active,changeActive] = useState(0)
-	const buttons = ['Videos','About','Show','Story','Creatives']
-	return  <div className='controls-container'>
+	const [currentPage, setCurrentPage] = useState(0)
+	const CurrentComponent = props.list[currentPage].comp;
+	return  <div className='op-container controls'>
+						<div className='controls-container'>
 						<div className='button-container'>
-							{ buttons.map((b,i)=><Button key={i} id={i} name={b} active={active==i} click={changeActive} />)}
+							{ props.list.map((b,i)=><Button key={i} id={i} name={b.name} active={currentPage==i} click={setCurrentPage} />)}
 					  </div>
-					  { active===0 ? <Videos /> : null }
-						{ active===1 ? <About /> : null }
-						{ active===2 ? <Show /> : null }
-						{ active===3 ? <Story /> : null }
-						{ active===4 ? <Creative /> : null }
+					  <CurrentComponent { ...props.list[currentPage].propList } />
 					</div>
+				</div>
 }
 
 export function Button(props){
@@ -87,28 +96,50 @@ export function Hero(props){
 					</div>
 }
 
+function Videos(props){
+ const vcomponents = [
+		{ name: 'sizzle reel', comp: Video, propList: { title: 'Sizzle Reel', src: 'https://www.youtube.com/embed/GBO5AVAd9gI?si=NtBZxcLRVvcndeJP'} },
+		{ name: 'promo reel', comp: Video, propList:  { title: 'Promo Reel', src: 'https://www.youtube.com/embed/8fkg26pBR14?si=kDBGQlmFUDbtFtTR?autoplay=1'}},
+	]
+	return <Controls list={ vcomponents} />
+}
+
 function About(props){
-	return	<div>
-						<Note />
-						<Concept />
-					</div>
+ const vcomponents = [
+		{ name: "Note", comp: Note },
+		{ name: "Concept", comp: Concept },
+		{ name: "Differences", comp: Different },
+		{ name: "Familiar", comp: Familiar },
+	]
+	return <Controls list={ vcomponents} />
 }
 
-function Show(props){
-		return <div>
-					<Different />
-					<Familiar />
-				 </div>
+function Script(props){
+ const vcomponents = [
+		{ name: "Characters", comp: Characters },
+		{ name: "The Story", comp: PLOT },
+	]
+	return <Controls list={ vcomponents} />
 }
 
-function Story(props){
-	return <div>
-					<Characters />
-					<PLOT />
-				 </div>
+function Music(props){
+ const vcomponents = [
+ 	  { name: "Note", comp: MusicNotes },
+		{ name: "Audio", comp: Player },
+	]
+	return <Controls list={ vcomponents} />
 }
 
 function Creative(props){
+ const vcomponents = [
+		{ name: "Writers", comp: Writers },
+		{ name: "Cast", comp: Cast },
+
+	]
+	return <div className='op-container note'> <Controls list={ vcomponents} /> </div>
+}
+
+export function Writers(){
 	return <div className='op-container'>
 						<div className='op-text-body'>
 							<div className='header1'>The Writing Team</div>
@@ -118,7 +149,6 @@ function Creative(props){
 								</div>
 							</div>
 						</div>
-						<Cast />
 					</div>
 }
 
@@ -184,23 +214,42 @@ function Photo(props){
 				</div>
 }
 
-function Music(props){
+function MusicNotes(props){
+	return <div className='op-container'>
+						<div className='op-text-body'>
+							<div className='header1'>The Music</div>
+							<div className='header2'>Andrew Abrams</div>
+							<div className='body'>
+								<div className='column'>
+									<p>When I began writing the score for It’s a Wonderful Life: A New Musical, I knew it was essential to let the music reflect the eras through which the story moves. As George grows—aging, changing, and maturing—the musical language grows and matures with him. I wanted the score itself to chart that evolution.</p>
+									<p>“Bedford Falls,” for example, carries hints of ragtime and early 20th-century popular music; “Doing the Charleston” propels us, singing and dancing, straight into the exuberance of the 1920s; and “You Can’t Keep the Bailey Boys Down” embraces the vibrant swing of the 1940s. All of this musical history culminates in “Pottersville,” which twists themes heard earlier in the show—shifting them into minor keys, disrupting rhythms, and layering everything with the smoky, late-1940s jazz-club atmosphere that defines that world.</p>
+									<p>The show is written for a cast of 21, though larger companies will find it easy to expand. It can also be produced with fewer performers; however, because the piece includes several choral numbers, the music director will need to ensure that all vocal lines are fully covered.</p>
+									<p>Our brilliant orchestrator, Evan Lange, has arranged the score for 24 musicians, including a lush section of 10 live string players. The orchestration can be reduced to 17 (with strings covered by a quartet and a Keyboard 2 string book), and I’m confident that producing companies can adapt the instrumentation further to suit their needs.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+}
+
+function Player(props){
 	const [activeSong, changeActive] = useState(null);
 
 	const info =  (activeSong) ? SONGS[activeSong-1] : null
 	const song = (info) ? info.name : ''
 	const img = (info) ? `/assets/photos/${info.img}.jpg` : ''
 
-	return	<div className={`audio-container${activeSong?' noscroll':''}`}>
-
-						{SONGS.map((s,i)=><AudioPlayer key={i} playing={(i==activeSong-1)?true:false} id={i+1} item={s} change={changeActive} />)}
-						
-						<div className={`audio-overlay${activeSong?'':' hidden'}`}>
-							<div className='song-image-container'><img className='song-image' src={img} /></div>		
-							<div className='song-title'>{song}</div>
-							<div className='song-close' onClick={()=>changeActive(null)}>Stop</div>
+	return	<div className='op-container'>
+						<div className='op-text-body'>
+							<div className='header1'>Audio Samples</div>
+								<div className={`audio-container${activeSong?' noscroll':''}`}>
+								{SONGS.map((s,i)=><AudioPlayer key={i} playing={(i==activeSong-1)?true:false} id={i+1} item={s} change={changeActive} />)}
+								<div className={`audio-overlay${activeSong?'':' hidden'}`}>
+									<div className='song-image-container'><img className='song-image' src={img} /></div>		
+									<div className='song-title'>{song}</div>
+									<div className='song-close' onClick={()=>changeActive(null)}>Stop</div>
+								</div>
+							</div>
 						</div>
-
 					</div>
 }
 
@@ -255,16 +304,6 @@ function AudioPlayer(props) {
       <div className='audio-name'>{props.item.name}</div>
     </div>
   );
-}
-
-
-function Videos(props){
-	return <div className='op-container note'>
-						<div className='header1'>Sizzle Reel</div>
-						<Video src='https://www.youtube.com/embed/GBO5AVAd9gI?si=NtBZxcLRVvcndeJP'/>
-						<div className='header1'>Promo Reel</div>
-						<Video src='https://www.youtube.com/embed/8fkg26pBR14?si=kDBGQlmFUDbtFtTR?autoplay=1'/>
-				 </div>
 }
 
 function Different(props){
@@ -357,16 +396,21 @@ function Snowflake(props){
 
 
 function Video(props){
-	return <div className='video-container'>
-							<iframe 
-								src={props.src}
-								title="YouTube video player" 
-								frameBorder="0" 
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-								referrerPolicy="strict-origin-when-cross-origin" 
-								allowFullScreen>
-							</iframe>
-				</div>
+	return <div className='op-container note'>
+					<div className='op-text-body'>
+						<div className='header1'>{props.title}</div>
+							<div className='video-container'>
+										<iframe 
+											src={props.src}
+											title="YouTube video player" 
+											frameBorder="0" 
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+											referrerPolicy="strict-origin-when-cross-origin" 
+											allowFullScreen>
+										</iframe>
+							</div>
+						</div>
+					</div>
 }
 
 function Footer(props){
