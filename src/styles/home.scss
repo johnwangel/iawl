@@ -404,12 +404,14 @@ a {
 @media screen and (max-width:500px) {
 
 	.op-container {
+		@flex($align-items center);
 		width: 95%;
 	}
 
 	.op-container.controls {
 		margin: 0;
 		padding: 0;
+		width: 95%;
 	}
 
 	.app-main .logo-container img.expand-img {

@@ -18,7 +18,6 @@ export function Main(props){
 	const vcomponents = [
 		{ name: 'videos', comp: Videos },
 		{ name: 'about', comp: About },
-		{ name: 'script', comp: Script },
 		{ name: 'music', comp: Music },
 		{ name: 'creative', comp: Creative }
 	]
@@ -108,16 +107,8 @@ function About(props){
  const vcomponents = [
 		{ name: "Note", comp: Note },
 		{ name: "Concept", comp: Concept },
-		{ name: "Differences", comp: Different },
-		{ name: "Familiar", comp: Familiar },
-	]
-	return <Controls list={ vcomponents} />
-}
-
-function Script(props){
- const vcomponents = [
-		{ name: "Characters", comp: Characters },
-		{ name: "The Story", comp: PLOT },
+		{ name: "Story", comp: PLOT },
+		{ name: "Cast", comp: Characters },
 	]
 	return <Controls list={ vcomponents} />
 }
@@ -191,6 +182,8 @@ function Concept(props){
 							</div>
 						</div>
 						</div>
+						<Different />
+						<Familiar />
 					</div>
 }
 
