@@ -13,12 +13,12 @@ import '../styles/photos.scss'
 import '../styles/quotes.scss'
 import '../styles/lists.scss'
 
-
 export function Main(props){
+
 	const vcomponents = [
-		{ name: 'videos', comp: Videos },
 		{ name: 'about', comp: About },
 		{ name: 'music', comp: Music },
+		{ name: 'Media', comp: Media },
 		{ name: 'creative', comp: Creative }
 	]
 
@@ -95,6 +95,7 @@ export function Hero(props){
 					</div>
 }
 
+
 function Videos(props){
  const vcomponents = [
 		{ name: 'sizzle reel', comp: Video, propList: { title: 'Sizzle Reel', src: 'https://www.youtube.com/embed/GBO5AVAd9gI?si=NtBZxcLRVvcndeJP'} },
@@ -121,6 +122,14 @@ function Music(props){
 	return <Controls list={ vcomponents} />
 }
 
+function Media(props){
+	 const vcomponents = [
+		{ name: 'Videos', comp: Videos },
+		{ name: 'Photos', comp: Photos  },
+	]
+	return <Controls list={ vcomponents} />
+}
+
 function Creative(props){
  const vcomponents = [
 		{ name: "Writers", comp: Writers },
@@ -137,6 +146,7 @@ export function Writers(){
 							<div className='body'>
 								<div className='column'>
 									{ CREATIVES.map(p=><ListItem key={Math.random()} item={p} />  )}
+									<PhotoInline item={ { file: 'OrpheumMarquee.jpg' } } />
 								</div>
 							</div>
 						</div>
@@ -150,6 +160,7 @@ export function Note(props){
 							<div className='header2'>John Atkins</div>
 							<div className='body'>
 								<div className='column'>
+									<PhotoInline item={PHOTOS.find(p=>p.id===23)} />
 									<p>A friend of mine once theorized that there are two kinds of people in this world—those who prefer Miracle on 34th Street, and those who prefer It's a Wonderful Life. I believe there is room for both, but I am firmly in the camp of the latter. </p>
 									<div className='text-quote'>
 										<div className='quote'>This adaptation, featuring music by Andrew Abrams and book and lyrics by John Atkins, doesn’t merely transpose Frank Capra’s beloved film to the stage—it reimagines it with a theatrical flourish all its own.</div>
@@ -192,19 +203,6 @@ export function Quote(props){
 						<div className='quote'>&ldquo;{props.quote}&rdquo;</div>
 						<div className='attr'>&ndash;&nbsp;{props.attr}</div>
 					</div>
-}
-
-function Photos(props){
-	return	<div className='photo-container'>
-						{ PHOTOS.map(p=><Photo key={Math.random()} item={p} />  )}
-					</div>
-}
-
-function Photo(props){
-	return <div className='photo'>
-					<img src={`/assets/photos/${props.item.file}`} />
-					<div className='caption'>{props.item.caption}</div>
-				</div>
 }
 
 function MusicNotes(props){
@@ -404,6 +402,25 @@ function Video(props){
 							</div>
 						</div>
 					</div>
+}
+
+function Photos(props){
+	return	<div className='photo-container'>
+						{ PHOTOS.map(p=><Photo key={Math.random()} item={p} />  )}
+					</div>
+}
+
+function Photo(props){
+	return <div className='photo'>
+					<img src={`/assets/photos/${props.item.file}`} />
+					<div className='caption'>{props.item.caption}</div>
+				</div>
+}
+
+function PhotoInline(props){
+		return <div className='photo-inline'>
+					<img src={`/assets/photos/${props.item.file}`} />
+				</div>
 }
 
 function Footer(props){

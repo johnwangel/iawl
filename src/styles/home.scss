@@ -17,6 +17,7 @@ a {
 }
 
 .op-container {
+	@include flex($dir:column);
 	overflow: hidden;
 	border-radius: 5px;
 	width: calc(100% - 10%);
@@ -123,11 +124,13 @@ a {
 		position: relative;
 		margin-top: 25px;
 		max-width: 50%;
-		&.column {
+		.column {
 			display: flex;
 			flex-direction: column;
 			flex:1;
 			padding: 10px;
+			width: 100%;
+			max-width: 100%;
 		}
 		p {
 			font-size: 14pt;
@@ -422,7 +425,7 @@ a {
 
 	.authors .au-cont {
 		width: calc(100% - 20px);
-		margin: 15px 10px;
+		margin: 10px;
 
 		.super-title {
 			font-size: 12pt;
@@ -437,7 +440,6 @@ a {
 	}
 
 	.ack {
-		padding: 15px 0;
 		width: 100%;
 		div {
 			font-size: 12pt;
