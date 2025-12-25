@@ -7,8 +7,8 @@ import { SONGS } from '../helpers/lists.jsx'
 export function Music(props){
 	return <div>
 			<nav className='button-container'>
-				<NavLink to='/music/notes' className='button'>Note</NavLink>
-				<NavLink to='/music/audio' className='button'>Audio</NavLink>
+				<NavLink to='/main/music/notes' className='button'>Note</NavLink>
+				<NavLink to='/main/music/audio' className='button'>Audio</NavLink>
 			</nav>
 			<Outlet />
 		</div>

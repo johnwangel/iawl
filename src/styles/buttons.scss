@@ -19,3 +19,17 @@
 		}
 	}
 }
+
+@media screen and (max-width:500px) {
+
+	.button-container {
+		width: 100%;
+		@include flex($justify:center,$wrap:wrap,$gap:5px);
+		margin: 5px 10px 0;
+		.button {
+			padding: 5px 10px;
+			font-size: 12pt;
+		}
+	}
+
+}

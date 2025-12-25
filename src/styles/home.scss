@@ -431,16 +431,6 @@ a {
 		font-size: 14pt;
 	}
 
-	.button-container {
-		width: 100%;
-		@include flex($justify:center,$wrap:wrap,$gap:5px);
-		margin: 5px 10px 0;
-		.button {
-			padding: 5px 10px;
-			font-size: 12pt;
-		}
-	}
-
 	.photo-container, .about-container {
 		width: 90%;
 		margin-bottom: 25px;

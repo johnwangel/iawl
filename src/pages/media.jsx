@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 export function Media(props){
 	return<div>
 			<nav className='button-container'>
-				<NavLink to='/media/videos' className='button'>Videos</NavLink>
-				<NavLink to='/media/photos' className='button'>Photos</NavLink>
+				<NavLink to='/main/media/videos' className='button'>Videos</NavLink>
+				<NavLink to='/main/media/photos' className='button'>Photos</NavLink>
 			</nav>
 			<Outlet />
 		</div>
@@ -18,8 +18,8 @@ export function Videos(props){
 	]
 	return <div>
 			<nav className='button-container'>
-				<NavLink to='/media/videos/sizzle' className='button'>Sizzle Reel</NavLink>
-				<NavLink to='/media/videos/promo' className='button'>Promo Reel</NavLink>
+				<NavLink to='/main/media/videos/sizzle' className='button'>Sizzle Reel</NavLink>
+				<NavLink to='/main/media/videos/promo' className='button'>Promo Reel</NavLink>
 			</nav>
 			<Outlet />
 		</div>

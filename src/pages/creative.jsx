@@ -8,8 +8,8 @@ import { PhotoInline } from './photos.jsx'
 export function Creative(props){
 	return<div>
 			<nav className='button-container'>
-				<NavLink to='/creative/writers' className='button'>Writers</NavLink>
-				<NavLink to='/creative/cast' className='button'>Cast</NavLink>
+				<NavLink to='/main/creative/writers' className='button'>Writers</NavLink>
+				<NavLink to='/main/creative/cast' className='button'>Cast</NavLink>
 			</nav>
 			<Outlet />
 		</div>

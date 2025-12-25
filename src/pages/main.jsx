@@ -16,16 +16,23 @@ import '../styles/quotes.scss'
 import '../styles/lists.scss'
 import '../styles/buttons.scss'
 
-export function Main(props){
+export function Layout(props){
 	return <div className='app-main'>
+			<Outlet />
+		   </div>
+}
+
+
+export function StaticPage(props){
+		return <div>
 					<Snowflakes />
 					<Hero />
 					<div className='op-container main'>
 						<nav className="button-container">
-							<NavLink to='/about/note' className='button'>About</NavLink>
-							<NavLink to='/music/notes' className='button'>Music</NavLink>
-							<NavLink to='/media/photos' className='button'>Media</NavLink>
-							<NavLink to='/creative/writers' className='button'>Creative</NavLink>
+							<NavLink to='/main/about/note' className='button'>About</NavLink>
+							<NavLink to='/main/music/notes' className='button'>Music</NavLink>
+							<NavLink to='/main/media/photos' className='button'>Media</NavLink>
+							<NavLink to='/main/creative/writers' className='button'>Creative</NavLink>
 						</nav>
 						<Outlet />
 					</div>
