@@ -22,10 +22,10 @@ export function Main(props){
 					<Hero />
 					<div className='op-container main'>
 						<nav className="button-container">
-							<NavLink to='/about' className='button'>About</NavLink>
-							<NavLink to='/music' className='button'>Music</NavLink>
-							<NavLink to='/media' className='button'>Media</NavLink>
-							<NavLink to='/creative' className='button'>Creative</NavLink>
+							<NavLink to='/about/note' className='button'>About</NavLink>
+							<NavLink to='/music/notes' className='button'>Music</NavLink>
+							<NavLink to='/media/photos' className='button'>Media</NavLink>
+							<NavLink to='/creative/writers' className='button'>Creative</NavLink>
 						</nav>
 						<Outlet />
 					</div>
