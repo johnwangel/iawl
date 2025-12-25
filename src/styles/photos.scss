@@ -1,9 +1,15 @@
 @import './mixins';
 
+.photo-container{
+	width: calc(100% - 10%);
+	margin: 0 5% 50px;
+	@include flex(flex,row,center,flex-start,wrap,30px);
+}
+
 .photo {
 	box-shadow: 3px 3px 3px gray;
 	margin: 10px 0;
-	height: 280px;
+	//height: 280px;
 	background-color: white;
 	padding: 20px;
 	img {

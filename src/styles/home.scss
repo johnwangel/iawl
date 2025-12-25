@@ -210,26 +210,6 @@ a {
 	width: 100%;
 }
 
-.button-container {
-	@include flex(flex,row,center,center,nowrap,20px);
-	.button {
-		background-color: $lightblue;
-		border: 1px solid $lightblue;
-		padding: 10px 25px;
-		border-radius: 5px;
-		color: $steelblue;
-		font-size: 16pt;
-		cursor: pointer;
-		text-transform: uppercase;
-		font-weight: bold;
-		&:hover, &.active {
-			background-color: $steelblue;
-			color: $lightblue;
-			border: 1px solid $lightblue;
-		}
-	}
-}
-
 .description {
 	max-width: 50%;
 	margin: 0 25px;
@@ -252,14 +232,6 @@ a {
 		color: white;
 		text-transform: uppercase;
 	}
-}
-
-.photo-container{
-	width: calc(100% - 10%);
-	overflow: auto;
-	margin: 0 5% 50px;
-	height: 355px;
-	@include flex(flex,row,flex-start,center,nowrap,30px);
 }
 
 .audio-container {

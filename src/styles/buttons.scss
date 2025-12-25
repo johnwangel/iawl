@@ -1,0 +1,21 @@
+@import 'mixins.scss';
+
+.button-container {
+	@include flex(flex,row,center,center,nowrap,20px);
+	.button {
+		background-color: $lightblue;
+		border: 1px solid $lightblue;
+		padding: 10px 25px;
+		border-radius: 5px;
+		color: $steelblue;
+		font-size: 16pt;
+		cursor: pointer;
+		text-transform: uppercase;
+		font-weight: bold;
+		&:hover, &.active {
+			background-color: $steelblue;
+			color: $lightblue;
+			border: 1px solid $lightblue;
+		}
+	}
+}
