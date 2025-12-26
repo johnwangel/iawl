@@ -1,24 +1,28 @@
 import { Outlet, NavLink } from "react-router-dom"
 import { useState, useEffect, useRef } from 'react';
 
+import { QUOTES } from '../helpers/lists.jsx'
+
+
 export function Media(props){
-	return<div>
+	return <>
 			<nav className='button-container'>
 				<NavLink to='/main/media/photos' className='button'>Photos</NavLink>
 				<NavLink to='/main/media/videos/promo' className='button'>Videos</NavLink>
+				<NavLink to='/main/media/praise' className='button'>Quotes</NavLink>
 			</nav>
 			<Outlet />
-		</div>
+		</>
 }
 
 export function Videos(props){
-	return <div>
+	return <>
 			<nav className='button-container'>
-				<NavLink to='/main/media/videos/sizzle' className='button'>Sizzle Reel</NavLink>
 				<NavLink to='/main/media/videos/promo' className='button'>Promo Reel</NavLink>
+				<NavLink to='/main/media/videos/sizzle' className='button'>Sizzle Reel</NavLink>
 			</nav>
 			<Outlet />
-		</div>
+		</>
 }
 
 export function Video(props){
@@ -39,3 +43,22 @@ export function Video(props){
 					</div>
 }
 
+export function Quotes(props){
+	return <div className='op-container'>
+						<div className='op-text-body'>
+							<div className='header1'>The Critics</div>
+							<div className='body'>
+								<div className='column'>
+									{ QUOTES.map((p,i)=><Quote key={Math.random()} item={p} id={i} />  )}
+								</div>
+							</div>
+						</div>
+					</div>
+}
+
+function Quote(props){
+		return <div className={`text-quote${(props.item.id%2==0)?' dark':''}`}>
+							<div className='quote'>{props.item.quote}</div>
+							<div className='attr'>- {props.item.source}</div>
+						</div>
+}

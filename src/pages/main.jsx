@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 
 import { SONGS, PHOTOS, DIFFERENT, FAMILIAR, QUOTES, CREATIVES, CAST, CHARACTERS } from '../helpers/lists.jsx'
 
-import LOGO from '../assets/iawl_logo.jpg'
+import LOGO from '/assets/iawl_logo.jpg'
 import { Hero } from './hero.jsx'
 import { Snowflakes } from './snow.jsx'
 
@@ -43,7 +43,12 @@ export function StaticPage(props){
 function Footer(props){
 	const year = new Date().getFullYear()
 	return <div className='footer'>
+					<License />
 					<div className='contact'>Contact Us: <a href="mailto:wonderfullifemusical@gmail.com">wonderfullifemusical@gmail.com</a></div>
-					<div className='copyright'>&copy; {year} John Atkins</div>
+					<div className='copyright'>Web design &copy; {year} by John W. Atkins</div>
 				 </div>
+}
+
+function License(props){
+	return <div className='license'>Now <br />Licensing Through <span className='date'> 2029!</span></div>
 }

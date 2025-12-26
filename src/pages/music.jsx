@@ -5,13 +5,13 @@ import { SONGS } from '../helpers/lists.jsx'
 
 
 export function Music(props){
-	return <div>
+	return <>
 			<nav className='button-container'>
 				<NavLink to='/main/music/notes' className='button'>Note</NavLink>
 				<NavLink to='/main/music/audio' className='button'>Audio</NavLink>
 			</nav>
 			<Outlet />
-		</div>
+		</>
 }
 
 export function MusicNotes(props){
@@ -40,7 +40,7 @@ export function Player(props){
 
 	return	<div className='op-container'>
 						<div className='op-text-body'>
-							<div className='header1'>Audio Samples</div>
+							<div className='header1'>Sample Tracks</div>
 								<div className={`audio-container${activeSong?' noscroll':''}`}>
 								{SONGS.map((s,i)=><AudioPlayer key={i} playing={(i==activeSong-1)?true:false} id={i+1} item={s} change={changeActive} />)}
 								<div className={`audio-overlay${activeSong?'':' hidden'}`}>
@@ -56,7 +56,7 @@ export function Player(props){
 function AudioPlayer(props) {
 	const [isPlaying,setIsPlaying] = useState(false)
   const audioRef = useRef(null);
-  const src = `/assets/mp3/${props.item.file}.mp3`
+  const src = `/assets/audio/${props.item.file}.mp3`
 
   useEffect(() => {
 

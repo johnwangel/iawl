@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout, StaticPage } from './pages/main.jsx'
 import { About, Note, Concept, Story, Cast } from './pages/about.jsx'
 import { Music, MusicNotes, Player } from './pages/music.jsx'
-import { Media, Videos, Video } from './pages/media.jsx'
+import { Media, Videos, Video, Quotes } from './pages/media.jsx'
 import { Photos } from './pages/photos.jsx'
 import { Creative, Writers, OriginalCast } from './pages/creative.jsx'
 
@@ -34,6 +34,7 @@ function App() {
                   <Route path="/main/media/videos/sizzle" element={<Video id='8fkg26pBR14?si=kDBGQlmFUDbtFtTR' />} />
                 </Route>
                 <Route path="/main/media/photos" element={<Photos />} />
+                <Route path="/main/media/praise" element={<Quotes />} />
               </Route>
               <Route path="/main/creative" element={<Creative />} >
                 <Route path="/main/creative/writers" element={<Writers />} />

@@ -1,6 +1,7 @@
 @import 'mixins.scss';
 
 .footer {
+	padding-bottom: 50px;
 	width: calc(100% - 20px);
 	margin: 20px 10px;
 	@include flex($dir:column);
@@ -22,5 +23,27 @@
 		.copyright {
 			color: white;
 		}
+	}
+}
+
+.license {
+	@include flex(flex,column,center,center);
+	position: relative;
+	background-image: url('/assets/photos/full_moon.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 300px;
+	width: 300px;
+
+	font-size: 22pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 30pt;
+
+	.date {
+		color: $blue;
+		font-size: 40pt;
+		line-height: 40pt;
 	}
 }

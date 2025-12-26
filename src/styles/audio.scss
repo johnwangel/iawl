@@ -1,40 +1,41 @@
 @import 'mixins.scss';
 
 .audio-container {
+	@include flex(flex,column,center,center);
 	position: relative;
-	overflow: auto;
-	width: 500px;
-	padding: 0;
-	background-color: $coolblue;
-	border-radius: 5px;
-	margin-bottom: 0;
+	background-image: url('/assets/photos/full_moon.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 300px;
+	width: 300px;
 	&.noscroll {
 		overflow: hidden;
 	}
 }
 
 .audio-player {
-	padding: 2px 0;
-	width: calc(100% - 4px);
-	@include flex(flex,row,flex-start,center);
-	border-bottom: 1px solid $steelblue;
-	height: 30px;
+	@include flex(flex,row,center,center);
 	cursor: pointer;
-
-	&:hover, &.active {
-		background-color: white;
-	}
+	height: 28pt;
+	gap: 5px;
 
 	.audio-name {
-		font-size: 14pt;
-		color: $steelblue;
+		font-size: 16pt;
+		color: $blue;
+		font-weight: bold;
+	}
+
+	&:hover, &.active {
+		.audio-control.play:before {
+			color: $blue;
+			background-color: $white;
+		}
 	}
 
 }
 
 .audio-control {
-	font-size: 12pt;
-	margin-left: 5px;
+	font-size: 16pt;
 	width: 25px;
 	color: $steelblue;
 }
@@ -44,7 +45,14 @@
 // }
 
 .audio-control.play:before {
+	@include flex();
 	content: '\23f5';
+	color: $white;
+	background-color: $blue;
+	width: 22px;
+	height: 20px;
+	border-radius: 50%;
+	padding-top: 2pt;
 }
 
 .audio-overlay {
@@ -54,7 +62,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-color: $steelblue;
+	background-color: $white;
 	z-index: 100;
 
 	animation: .5s ease-in-out 0s slideInFromRight;
@@ -80,18 +88,21 @@
 	}
 
 	.song-title {
-		color: white;
+		color: $blue;
 		padding: 10px 0;
-		font-size: 16pt;
+		font-size: 18pt;
+		font-weight: bold;
 	}
 
 	.song-close {
-		color: $aqua;
-		background-color: $iceblue;
+		color: $white;
+		background-color: $blue;
 		border-radius: 5px;
-		padding: 10px 20px;
-		border: 1px solid $aqua;
+		padding: 5px 20px;
+		border: 1px solid $white;
 		cursor: pointer;
+		font-size: 14pt;
+		text-transform: uppercase;
 	}
 
 }
@@ -100,7 +111,6 @@
 
 	.audio-container {
 		width: 100%;
-
 	}
 
 	.audio-player{
@@ -109,9 +119,6 @@
 		}
 	}
 }
-
-
-
 
 @keyframes slideInFromRight {
 	0% { transform: translateX(200vw) }
