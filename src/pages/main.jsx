@@ -51,5 +51,5 @@ function Footer(props){
 }
 
 function License(props){
-	return <div className='license'>Now <br />Licensing Through <span className='date'> 2029!</span></div>
+	return <div className='license'>Now <br />Licensing Through <span className='date'> 2028!</span></div>
 }
