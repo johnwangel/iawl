@@ -29,9 +29,9 @@ function App() {
                 <Route path="/main/music/audio" element={<Player />} />
               </Route>
               <Route path="/main/media" element={<Media/>} >
-                <Route path="/main/media/videos" element={<Videos id='GBO5AVAd9gI?si=NtBZxcLRVvcndeJP'/>} >
+                <Route path="/main/media/videos" element={<Videos />} >
+                  <Route path="/main/media/videos/promo" element={<Video id='GBO5AVAd9gI?si=NtBZxcLRVvcndeJP'/>} />
                   <Route path="/main/media/videos/sizzle" element={<Video id='8fkg26pBR14?si=kDBGQlmFUDbtFtTR' />} />
-                  <Route path="/main/media/videos/promo" element={<Video />} />
                 </Route>
                 <Route path="/main/media/photos" element={<Photos />} />
               </Route>
