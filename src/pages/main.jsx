@@ -45,7 +45,7 @@ function Footer(props){
 	const year = new Date().getFullYear()
 	return <div className='footer'>
 					<License />
-					<div className='contact'>Contact Us: <a href="mailto:wonderfullifemusical@gmail.com">wonderfullifemusical@gmail.com</a></div>
+					<div className='contact'>Contact Us:<br/><a href="mailto:wonderfullifemusical@gmail.com">wonderfullifemusical@gmail.com</a></div>
 					<div className='copyright'>Web design &copy; {year} by John W. Atkins</div>
 				 </div>
 }

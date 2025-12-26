@@ -6,10 +6,12 @@
 	margin: 20px 10px;
 	@include flex($dir:column);
 	.contact {
+		@include flex($dir:column);
 		font-size: 20pt;
 		color: white;
 	}
 	.copyright {
+		margin-top: 50px;
 		color: white;
 	}
 }
