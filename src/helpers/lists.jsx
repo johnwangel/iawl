@@ -9,7 +9,8 @@ export const SONGS = [
 		{ name: "Bailey Boys", id: 2, file:  'baileyboys', img: 'baileyboysb', desc: 'Bert, Ernie, Bank Tellers' },
 		{ name: 'Your White Knight', id: 3, file:  'whiteknight', img: 'zuzu', desc: 'George and Zuzu' },
 		{ name: 'Angel Gets His Wings', id: 4, file:  'wings', img: 'angel', desc: 'Clarence' },
-		{ name: 'Christmas Day', id: 5, file: 'christmasday', img: 'christmas-family', desc: 'Ensemble' },
+		{ name: 'Pottersville', id: 5, file:  'pottersville', img: 'A2S8Pottersville Sign', desc: 'Ensemble' },
+		{ name: 'Christmas Day', id: 6, file: 'christmasday', img: 'christmas-family', desc: 'Ensemble' },
 	]
 
 export const PHOTOS = [

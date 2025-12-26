@@ -11,6 +11,7 @@ export function About(props){
 				<NavLink to='/main/about/note' className='button'>Note</NavLink>
 				<NavLink to='/main/about/concept' className='button'>Concept</NavLink>
 				<NavLink to='/main/about/story' className='button'>Story</NavLink>
+				<NavLink to='/main/about/script' className='button'>Script</NavLink>
 				<NavLink to='/main/about/cast' className='button'>Cast</NavLink>
 			</nav>
 			<Outlet />

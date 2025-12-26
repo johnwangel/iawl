@@ -6,6 +6,7 @@ import { Layout, StaticPage } from './pages/main.jsx'
 import { About, Note, Concept, Story, Cast } from './pages/about.jsx'
 import { Music, MusicNotes, Player } from './pages/music.jsx'
 import { Media, Videos, Video, Quotes } from './pages/media.jsx'
+import { Script } from './pages/script.jsx'
 import { Photos } from './pages/photos.jsx'
 import { Creative, Writers, OriginalCast } from './pages/creative.jsx'
 
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/main/about/note" element={<Note />} />
                 <Route path="/main/about/concept" element={<Concept />} />
                 <Route path="/main/about/story" element={<Story />} />
+                <Route path="/main/about/script" element={<Script />} />
                 <Route path="/main/about/cast" element={<Cast />} />
               </Route>
               <Route path="/main/music" element={<Music/>} >

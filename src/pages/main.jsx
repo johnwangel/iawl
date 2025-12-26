@@ -15,6 +15,7 @@ import '../styles/photos.scss'
 import '../styles/quotes.scss'
 import '../styles/lists.scss'
 import '../styles/buttons.scss'
+import '../styles/script.scss'
 
 export function Layout(props){
 	return <div className='app-main'>

@@ -1,0 +1,48 @@
+@import 'mixins.scss';
+
+
+.intro {
+	font-size: 16pt;
+	line-height: 24pt;
+	margin: 25px 0;
+}
+
+.script {
+	max-width: 500px;
+	&>* {
+		font-size: 12pt;
+		font-family: 'Source Code Pro';
+	}
+
+	.scene {
+		margin-top: 15px;
+		font-size: 14pt;
+		font-weight: bold;
+	}
+
+	.setting {
+		font-style: italic;
+	}
+
+	.character {
+		margin-top: 10px;
+		text-align: center;
+	}
+
+	.direction {
+		margin-top: 10px;
+		margin-left: 20%;
+		font-style: italic;
+	}
+
+	.instruction {
+		margin: 4px 0;
+		font-style: italic;
+		text-align: center;
+	}
+
+	.lyric {
+		margin-left: 10%;
+	}
+
+}
