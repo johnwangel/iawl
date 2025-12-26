@@ -2,6 +2,7 @@
 
 .button-container {
 	@include flex(flex,row,center,center,nowrap,20px);
+	margin-bottom: 15px;
 	.button {
 		background-color: $lightblue;
 		border: 1px solid $lightblue;
@@ -24,6 +25,7 @@
 
 	.button-container {
 		width: 100%;
+		margin-bottom: 5px;
 		@include flex($justify:center,$wrap:wrap,$gap:5px);
 		margin: 5px 10px 0;
 		.button {

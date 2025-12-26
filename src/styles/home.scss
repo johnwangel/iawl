@@ -380,7 +380,7 @@ a {
 
 	.op-container {
 		@flex($align-items center);
-		width: 95%;
+		//width: 95%;
 	}
 
 	.op-container.controls {
@@ -430,7 +430,6 @@ a {
 		text-align: center;
 		font-size: 14pt;
 	}
-
 	.photo-container, .about-container {
 		width: 90%;
 		margin-bottom: 25px;

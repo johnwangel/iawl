@@ -1,17 +1,26 @@
 @import 'mixins.scss';
 
 .footer {
+	width: calc(100% - 20px);
+	margin: 20px 10px;
 	@include flex($dir:column);
-	width: 100%;
-	height: 100px;
 	.contact {
 		font-size: 20pt;
 		color: white;
-
 	}
 	.copyright {
 		color: white;
 	}
+}
 
-
+@media screen and (max-width:500px) {
+	.footer {
+		.contact {
+			font-size: 12pt;
+			color: white;
+		}
+		.copyright {
+			color: white;
+		}
+	}
 }

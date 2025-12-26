@@ -9,11 +9,10 @@
 .photo {
 	box-shadow: 3px 3px 3px gray;
 	margin: 10px 0;
-	//height: 280px;
 	background-color: white;
 	padding: 20px;
 	img {
-		width: 350px;
+		width: 325px;
 	}
 	.caption {
 		font-family: "Indie Flower";
@@ -25,6 +24,7 @@
 	}
 
 }
+
 .photo-inline {
 	@include flex();
 	max-width: 100%;
@@ -32,4 +32,34 @@
 		width: 100%;
 		object-fit: contain;
 	}
+}
+
+@media screen and (max-width:500px) {
+
+	.photo-container{
+		width: calc(100% - 20px);
+		margin: 0 10px 15px;
+		@include flex(flex,row,center,flex-start,wrap,0);
+	}
+
+	.photo {
+		box-shadow: 3px 3px 3px gray;
+		margin: 10px 0;
+		background-color: white;
+		padding: 20px;
+		img {
+			width: 95%;
+		}
+		.caption {
+			font-family: "Indie Flower";
+			color: $steelblue;
+			text-align: center;
+			height: 20px;
+			font-size: 14pt; 
+			line-height: 50px;
+		}
+
+	}
+
+
 }

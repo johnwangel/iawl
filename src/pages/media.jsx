@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 export function Media(props){
 	return<div>
 			<nav className='button-container'>
-				<NavLink to='/main/media/videos' className='button'>Videos</NavLink>
 				<NavLink to='/main/media/photos' className='button'>Photos</NavLink>
+				<NavLink to='/main/media/videos/sizzle' className='button'>Videos</NavLink>
 			</nav>
 			<Outlet />
 		</div>
