@@ -25,7 +25,7 @@ export function Layout(props){
 }
 
 export function StaticPage(props){
-		return <div>
+		return <>
 					<Snowflakes />
 					<Hero />
 					<div className='op-container main'>
@@ -38,7 +38,7 @@ export function StaticPage(props){
 						<Outlet />
 					</div>
 					<Footer />
-				 </div>
+				 </>
 }
 
 function Footer(props){

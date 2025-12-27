@@ -2,17 +2,17 @@ import { Outlet, NavLink } from "react-router-dom"
 import { useState, useEffect, useRef } from 'react';
 
 import { CREATIVES, CAST } from '../helpers/lists.jsx'
-import { ListItem } from './lists.jsx'
+import { ListItem, CastItem } from './lists.jsx'
 import { PhotoInline } from './photos.jsx'
 
 export function Creative(props){
-	return<div>
+	return <>
 			<nav className='button-container'>
 				<NavLink to='/main/creative/writers' className='button'>Writers</NavLink>
 				<NavLink to='/main/creative/cast' className='button'>Cast</NavLink>
 			</nav>
 			<Outlet />
-		</div>
+		</>
 }
 
 export function Writers(){
