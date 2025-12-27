@@ -8,6 +8,7 @@ import { Hero } from './hero.jsx'
 import { Snowflakes } from './snow.jsx'
 
 import '../styles/home.scss'
+import '../styles/hero.scss'
 import '../styles/headings.scss'
 import '../styles/audio.scss'
 import '../styles/footer.scss'
@@ -22,7 +23,6 @@ export function Layout(props){
 			<Outlet />
 		   </div>
 }
-
 
 export function StaticPage(props){
 		return <div>

@@ -4,7 +4,6 @@ import { PHOTOS } from '../helpers/lists.jsx'
 
 export function PhotoInline(props){
 	const item = (props.file) ? props.file : PHOTOS.find(p=>p.id===parseInt(props.id)).file
-	console.log(item)
 	return <div className='photo-inline'>
 				<img src={`/assets/photos/${item}`} />
 			</div>

@@ -1,0 +1,287 @@
+@import 'mixins.scss';
+
+.op-container {
+	.hero {
+		width: 100%;
+		display: grid;
+		grid-template-rows: 100%;
+		grid-template-columns: 1fr 2fr 1fr;
+		gap: 50px;
+		background-color: transparent;
+
+	  .au-cont {
+	  	&>* {
+	  		font-family: $headings;
+	  	}
+
+	  	&.left {
+				animation: 5.5s ease-in-out 0s slideInFromLeft;
+	  	}
+
+	  	&.left>* {
+				text-align: right;
+	  	}
+
+	  	&.right>* {
+				text-align: left;
+				animation: 5.5s ease-in-out 0s slideInFromRight; 
+	  	}
+
+	  	position: relative;
+	  	@include flex($dir:column);
+
+	  	.super-title {
+	  		width: 100%;
+	  		font-size: 20pt;
+	  		text-transform: uppercase;
+	  		color: white;
+	  	}
+
+	  	.author {
+	  		text-transform: uppercase;
+	  		width: 100%;
+	  		font-size: 32pt;
+	  		color: white;
+	  		line-height: 40pt;
+	  	}
+
+	  }
+
+
+		.photo-group {
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.img-base {
+			z-index: 10;
+		}
+
+		.img-overlay {
+			position: absolute;
+			top: -15%;
+			left: 0;
+			z-index: 20;
+		}
+
+		#text1 {
+			animation: 1.5s ease-out 0s slideInFromLeft;
+		}
+		#text2 {
+			animation: 2s ease-out 0s slideInFromRight;
+		}
+		#text3 {
+			animation: 4s ease-out 0s slideInFromLeft;
+		}
+		#text4 {
+			animation: 11s ease-out 0s slideInFromRight;
+		}
+		#moon1 {
+			animation: 10s ease-out 0s slideInFromTop;
+			z-index: 15;
+		}
+
+	}
+
+	  .ack {
+			@include flex();
+			width: 70%;
+			background-color: $blue;
+			position: relative;
+			color: white;
+			padding: 10px 15%;
+			text-align: center;
+			font-size: 24pt;
+			line-height: 32pt;
+			animation: 5.5s ease-in-out 0s slideInFromBottom;
+			z-index: 10;
+		}
+
+}
+
+
+.authors {
+	display: none;
+}
+
+
+@media screen and (max-width:1024px) {
+
+		.op-container .hero {
+			grid-template-columns: 100%;
+			.au-cont {
+				display: none;
+			}
+		}
+
+		.authors {
+			width: calc(100% - 20px);
+			margin: 15px 10px;
+			
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-template-columns: 1fr 1fr;
+
+			.au-cont {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				&>* {
+					color: white;
+				}
+
+				&.left>* {
+					text-align: center;
+					animation: 1.5s ease-in-out 0s slideInFromLeft;
+				}
+
+				&.right>* {
+					text-align: center;
+					animation: 1.5s ease-in-out 0s slideInFromRight;
+				}
+
+				.super-title {
+					width: 100%;
+					font-size: 15pt;
+					line-height: 20pt;
+				}
+				.author {
+					white-space: nowrap;
+					width: 100%;
+					font-size: 20pt;
+					line-height: 25pt;
+				}
+			}
+		}
+
+		.op-container.full .ack {
+			width: calc(100% - 30%);
+			padding: 0;
+			font-size: 15pt;
+			line-height: 22pt;
+			padding: 0 15%;
+			animation: 2.0s ease-in-out 0s slideInFromBottom;
+		}
+
+		.logo-container {
+			@include flex($dir:column);
+		  	width: 100vw;
+		  	max-height: 100vw;
+		  	min-height: 100vw;
+		  	height: unset;
+		  	min-height: unset;
+		  	max-height: unset;
+
+		  	img.expand-img {
+			    width: 100%;
+			    max-width: 100%;
+			    min-width: 100%;
+			    height: 100%;
+			    max-height: 100%;
+			    min-height: 100%;
+			  }
+
+			  .credits {
+			  	position: relative;
+			  	.authors {
+			  		padding-top: 50px;
+			  	}
+
+			  }
+
+			.credits .authors .au-cont {
+			  	&.left {
+			  		animation: 1.5s ease-in-out 0s slideInFromLeft;
+			  	}
+
+			  	&.right{
+			  		animation: 1.5s ease-in-out 0s slideInFromRight;
+			  	}
+
+			  	position: relative;
+			  	@include flex($dir:column);
+			  	.super-title {
+			  		font-size: 14pt;
+			  		text-transform: uppercase;
+			  	}
+			  	.author {
+			  		font-size: 24pt;
+			  	}
+			  }
+		}
+
+}
+
+@media screen and (max-width:500px) {
+
+	.op-container {
+		@flex($align-items center);
+	}
+
+	.op-container.controls {
+		margin: 0;
+		padding: 0;
+		width: 95%;
+	}
+
+	.app-main .logo-container img.expand-img {
+		height: 35vh;
+		width: unset;
+		object-fit: cover;
+	}
+
+	.authors .au-cont {
+		width: calc(100% - 20px);
+		margin: 10px;
+
+		.super-title {
+			font-size: 12pt;
+			line-height: 16pt;
+
+		}
+		.author {
+			font-size: 16pt;
+			line-height: 22pt;
+
+		}
+	}
+
+	.ack {
+		width: 100%;
+		div {
+			font-size: 12pt;
+		  line-height: 17pt;
+		}
+	}
+
+}
+
+@keyframes slideInFromLeft {
+	0% { transform: translateX(-100vw) }
+	100% { transform: translateX(0) }
+}
+
+@keyframes slideInFromRight {
+	0% { transform: translateX(200vw) }
+	100% { transform: translateX(0) }
+}
+
+@keyframes slideInFromBottom {
+	0% { transform: translateY(200vh) }
+	100% { transform: translateY(0) }
+}
+
+@keyframes slideInFromTop {
+	0% { transform: translateY(-100vh) }
+	100% { transform: translateY(0) }
+}
+
+
+
+

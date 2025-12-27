@@ -1,13 +1,14 @@
 @import 'mixins.scss';
 
 .audio-container {
-	@include flex(flex,column,center,center);
+	@include flex(flex,column,center,center,nowrap,10px);
 	position: relative;
 	background-image: url('/assets/photos/full_moon.png');
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 300px;
-	width: 300px;
+	background-size: contain;
+	height: 400px;
+	width: 400px;
 	&.noscroll {
 		overflow: hidden;
 	}
@@ -111,6 +112,7 @@
 
 	.audio-container {
 		width: 100%;
+		gap: 0;
 	}
 
 	.audio-player{
