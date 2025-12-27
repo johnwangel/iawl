@@ -31,6 +31,11 @@ export function MusicNotes(props){
 					</div>
 }
 
+export function Song(props){
+	const [playing,changePlaying] = useState('off')
+	return	<AudioPlayer key="1z" playing={playing=='on'} id={playing==='off'?'on':'off'} item={SONGS.find(s=>s.id==props.id)} change={changePlaying} />
+}
+
 export function Player(props){
 	const [activeSong, changeActive] = useState(null);
 
@@ -53,7 +58,7 @@ export function Player(props){
 					</div>
 }
 
-function AudioPlayer(props) {
+export function AudioPlayer(props) {
 	const [isPlaying,setIsPlaying] = useState(false)
   const audioRef = useRef(null);
   const src = `/assets/audio/${props.item.file}.mp3`

@@ -90,13 +90,14 @@
 
 		.quote {
 			padding: 10px;
-			margin-top: 5px;
+			margin-top: 30px;
 			width: 100%;
 			width: calc(100% - 20px);
 		}
 
 
 		&.dark {
+			margin-top: 0;
 			width: 95%;
 			padding: 35px 5px;
 			&:after, &:before {
@@ -108,6 +109,7 @@
 			.quote {
 			  padding: 20px 10px;
 			  width: calc(100% - 30px);
+			  margin-top: 15px
 			}
 			
 		}

@@ -11,15 +11,17 @@
 		color: white;
 	}
 	.copyright {
+		text-align: center;
 		margin-top: 50px;
 		color: white;
+		font-size: 10pt;
 	}
 }
 
 @media screen and (max-width:500px) {
 	.footer {
 		.contact {
-			font-size: 12pt;
+			font-size: 18pt;
 			color: white;
 		}
 		.copyright {

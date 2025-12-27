@@ -40,7 +40,7 @@ function App() {
               </Route>
               <Route path="/main/creative" element={<Creative />} >
                 <Route path="/main/creative/writers" element={<Writers />} />
-                <Route path="/main/creative/cast" element={<Cast />} />
+                <Route path="/main/creative/cast" element={<OriginalCast />} />
               </Route>
             </Route>
           </Route>

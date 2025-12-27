@@ -1,11 +1,16 @@
 import { Outlet, NavLink } from "react-router-dom"
 import { useState, useEffect, useRef } from 'react';
 
+import { Song } from './music.jsx'
+import { SONGS } from '../helpers/lists.jsx'
+
 export function Script(props){
 	return <div className='op-container'>
 						<div className='op-text-body'>
 							<div className='header1'>Script Excerpt</div>
-							<div className='intro'>Following is an excerpt from Act 2, depicting the entire unborn-George/Pottersville sequence. Please contact us if you would like a complementary spec script.</div>
+							<Song id={5} />
+							<div className='intro'>Following is an excerpt from Act 2, depicting the entire unborn-George/Pottersville sequence. To experience the entire musical scene of the scene, press the Play button above to hear the recording. <b>Please contact us if you would like a complementary spec script.</b></div>
+
 								<div className='script'>
 									<div className='scene'>SCENE 8 TRANSITION</div>
 									<div className='setting'>A chanteuse appears in a soft lights, obscuring that it is Violet. Her hair, clothing, and makeup look cheap and vulgar.</div>
@@ -422,5 +427,4 @@ export function Script(props){
 							</div>
 						</div>
 }
-
 

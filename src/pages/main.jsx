@@ -46,7 +46,10 @@ function Footer(props){
 	return <div className='footer'>
 					<License />
 					<div className='contact'>Contact Us:<br/><a href="mailto:wonderfullifemusical@gmail.com">wonderfullifemusical@gmail.com</a></div>
-					<div className='copyright'>Web design &copy; {year} by John W. Atkins</div>
+					<div className='copyright'>
+					    Web layout &copy; {year} by John W. Atkins
+					    <br/>Based on print design by Kayla Ferris
+						<br/>All photographs courtesy Darren Lee and Mark Frohna</div>
 				 </div>
 }
 
