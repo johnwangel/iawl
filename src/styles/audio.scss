@@ -85,7 +85,7 @@
 
 	.audio-inner-container {
 		@include flex(flex,column,center,center);
-		width: 350px;
+		width: min(350px,100%);
 		height: 100%;
 		background-color: $blue;
 		border-radius: 15px;
@@ -99,9 +99,10 @@
 	.song-image-container {
 		width: 225px;
 		height: 225px;
-		background-color: white;
+		background-color: $white;
 		border-radius: 50%;
 		overflow: hidden;
+		outline: 1px solid $white;
 
 		.song-image {
 			height: 100%;
@@ -112,11 +113,13 @@
 	}
 
 	.song-title {
-		color: white;
-		padding: 10px 0;
+		color: $white;
+		padding: 15px;
 		font-size: 18pt;
 		font-weight: bold;
 		text-align: center;
+		width: calc(100% - 30px);
+
 	}
 
 	.song-close {
@@ -138,12 +141,15 @@
 	.op-container.tracks {
 	.op-text-body {
 			background-image:  unset;
+			max-width:100%;
 		}
 	}
 	.audio-container {
+		justify-content: flex-start;
 		align-items: flex-start;
 		width: 100%;
 		gap: 15px;
+		height: 400px;
 	}
 
 	.audio-player{
