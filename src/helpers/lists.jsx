@@ -3,15 +3,7 @@ const captimes = 'The Cap Times',
 	  madmag='Madison Magazine',
 	  tbway= "Talkin' Browadway"
 
-
-export const SONGS = [
-		{ name: 'Think Big', id: 1, file:  'thinkbig', img: 'thinkbig2', desc: 'George, Mary, and Violet' },
-		{ name: "Bailey Boys", id: 2, file:  'baileyboys', img: 'baileyboysb', desc: 'Bert, Ernie, Bank Tellers' },
-		{ name: 'Your White Knight', id: 3, file:  'whiteknight', img: 'zuzu', desc: 'George and Zuzu' },
-		{ name: 'Angel Gets His Wings', id: 4, file:  'wings', img: 'angel', desc: 'Clarence' },
-		//{ name: 'Pottersville', id: 5, file:  'pottersville', img: 'A2S8Pottersville Sign', desc: 'Ensemble' },
-		{ name: 'Christmas Day', id: 6, file: 'christmasday', img: 'christmas-family', desc: 'Ensemble' },
-	]
+const getPhoto = (id) => PHOTOS.find(p=>p.id==id).file.split('.')[0] 
 
 export const PHOTOS = [
 	{ id: 43, file:  "A1S01-Opening Prayers - concert.jpg", caption: "Prayers" },
@@ -51,6 +43,28 @@ export const PHOTOS = [
 	{ id: 33, file:  "A2S11Clarence Wings.jpg", caption: "Clarence Gets His Wings" },
 	{ id: 39, file:  "A2S11 Full Cast Bows.jpg", caption: "Final Bows" },
 ]
+
+export const SONGS = [
+		{ id: 1, include: true, name: 'Overture', file: 'overture', img: getPhoto(39), desc: 'Overture' },
+		{ id: 2, include: false, name: 'Bedford Falls', file: 'bedfordfalls', img: getPhoto(24), desc: 'Bedford Falls' },
+		{ id: 3, include: true, name: 'Think Big', file:  'thinkbig', img: 'thinkbig2', desc: 'George, Mary, and Violet' },
+		{ id: 4, include: false, name: 'Shabby', file: 'shabby', img: getPhoto(42), desc: '' },
+		{ id: 5, include: true, name: 'Doing the Charleston', file: 'charleston', img: getPhoto(28), desc: '' },
+		{ id: 6, include: false, name: 'This Old House', file: 'oldhouse', img: getPhoto(37), desc: '' },
+		{ id: 7, include: false, name: 'Trouble', file: 'trouble', img: getPhoto(8), desc: '' },
+		{ id: 8, include: true, name: 'Open Your Eyes', file: 'openeyes', img: getPhoto(7), desc: '' },
+		{ id: 9, include: false, name: 'Our Last Dollars', file: 'lastdollars', img: getPhoto(41), desc: '' },
+		{ id: 10, include: false, name: 'Oahu Wahoo', file: 'oahu', img: getPhoto(36), desc: '' },
+		{ id: 11, include: true, name: 'E Mangia', file: 'mangia', img: getPhoto(26), desc: '' },
+		{ id: 12, include: false, name: "You're Hired", file: 'yourehired', img: getPhoto(10), desc: '' },
+		{ id: 13, include: false, name: "Entr'acte", file: 'entracte', img: getPhoto(39), desc: '' },
+		{ id: 14, include: true, name: "You Can't Keep the Bailey Boys Down", file:  'baileyboys', img: getPhoto(13), desc: 'Bert, Ernie, Bank Tellers' },
+		{ id: 15, include: true, name: 'Your White Knight', file:  'whiteknight', img: getPhoto(2), desc: 'George and Zuzu' },
+		{ id: 16, include: true, name: 'An Angel Gets His Wings', file:  'wings', img: getPhoto(3), desc: 'Clarence' },
+		{ id: 17, include: false, name: 'Pottersville', file:  'pottersville', img: getPhoto(5), desc: 'Ensemble' },
+		{ id: 18, include: true, name: 'Christmas Day', file: 'christmasday', img: getPhoto(16), desc: 'Ensemble' },
+	]
+
 
 export const DIFFERENT = [
 		{ head: 'Perspective', desc: 'We have taken care not to deviate too much from the beloved story. Still, we have developed some of the core elements in ways that we hope will enrich and deepen the experience in ways that resonate with today’s world.' },

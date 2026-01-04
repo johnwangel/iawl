@@ -1,29 +1,36 @@
 @import 'mixins.scss';
 
+
+.op-container.tracks {
+	.op-text-body {
+			background-image: url('/assets/photos/bow.png'), url('/assets/photos/paper.png');
+			background-repeat: no-repeat, repeat;
+			background-position: bottom left, center;
+			background-size: contain, cover;
+	}
+}
+
 .audio-container {
-	@include flex(flex,column,center,center,nowrap,10px);
+	margin: 25px;
+	@include flex(flex,column,center,center,nowrap,30px);
 	position: relative;
-	background-image: url('/assets/photos/full_moon.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	height: 400px;
-	width: 400px;
+
+	width: 100%;
 	&.noscroll {
 		overflow: hidden;
 	}
 }
 
 .audio-player {
-	@include flex(flex,row,center,center);
+	@include flex(flex,row,center,flex-start,nowrap,15px);
 	cursor: pointer;
-	height: 28pt;
 	gap: 5px;
 
 	.audio-name {
 		font-size: 16pt;
 		color: $blue;
 		font-weight: bold;
+		line-height: 16pt;
 	}
 
 	&:hover, &.active {
@@ -71,10 +78,18 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-color: $white;
+
 	z-index: 100;
 
 	animation: .5s ease-in-out 0s slideInFromRight;
+
+	.audio-inner-container {
+		@include flex(flex,column,center,center);
+		width: 350px;
+		height: 100%;
+		background-color: $blue;
+		border-radius: 15px;
+	}
 
 	&.hidden {
 		display: none;
@@ -97,13 +112,15 @@
 	}
 
 	.song-title {
-		color: $blue;
+		color: white;
 		padding: 10px 0;
 		font-size: 18pt;
 		font-weight: bold;
+		text-align: center;
 	}
 
 	.song-close {
+		font-weight: bold;
 		color: $white;
 		background-color: $blue;
 		border-radius: 5px;
@@ -118,9 +135,15 @@
 
 @media screen and (max-width:500px) {
 
+	.op-container.tracks {
+	.op-text-body {
+			background-image:  unset;
+		}
+	}
 	.audio-container {
+		align-items: flex-start;
 		width: 100%;
-		gap: 0;
+		gap: 15px;
 	}
 
 	.audio-player{

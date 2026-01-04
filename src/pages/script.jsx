@@ -8,7 +8,7 @@ export function Script(props){
 	return <div className='op-container'>
 						<div className='op-text-body'>
 							<div className='header1'>Script Excerpt</div>
-							<Song id={5} />
+							<Song id={17} />
 							<div className='intro'>Following is an excerpt from Act 2, depicting the entire unborn-George/Pottersville sequence. To experience the entire musical scene of the scene, press the Play button above to hear the recording. <b>Please contact us if you would like a complementary spec script.</b></div>
 
 								<div className='script'>
