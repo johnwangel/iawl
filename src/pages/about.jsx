@@ -2,6 +2,7 @@ import { Outlet, NavLink } from "react-router-dom"
 import { useState, useEffect, useRef } from 'react';
 
 import { DIFFERENT, FAMILIAR, QUOTES, CHARACTERS } from '../helpers/lists.jsx'
+import { Quote } from './media.jsx'
 import { ListItem } from './lists.jsx'
 import { PhotoInline } from './photos.jsx'
 
@@ -25,18 +26,18 @@ export function Note(props){
 							<div className='header2'>John Atkins</div>
 							<div className='body'>
 								<div className='column'>
+
 									<PhotoInline id='23' />
-									<p>A friend of mine once theorized that there are two kinds of people in this world—those who prefer Miracle on 34th Street, and those who prefer It's a Wonderful Life. I believe there is room for both, but I am firmly in the camp of the latter. </p>
-									<div className='text-quote'>
-										<div className='quote'>This adaptation, featuring music by Andrew Abrams and book and lyrics by John Atkins, doesn’t merely transpose Frank Capra’s beloved film to the stage—it reimagines it with a theatrical flourish all its own.</div>
-										<div className='attr'>- BROADWAY WORLD</div>
-									</div>
-									<p>I first discovered It's a Wonderful Life in my teens. It was in the days when the film was shown continuously on all the cable networks, so after I had watched it once through, I flipped to another station and watched it again, and then I watched it again. The triumphant joy of that final scene is what ultimately drew me in. George Bailey hasn't overcome his difficulties—he's still in hot water over the supposed mishandling of funds—but even before the town comes to his rescue, he has realized that despite his tribulations, his life’s value is in all the loving relationships that have gone into the creation of his own identity—he is not alone. This a story that has stuck with me over the years like very few others. In some ways, I think we all feel like George Bailey at some point, and his epiphany at the end of the film is an inspiration for those darker times.</p>
-									<div className='text-quote dark'>
-										<div className='quote'>More than just a seasonal treat, it’s a reminder of musical theater’s unique ability to make the familiar feel fresh and the old feel new again</div>
-										<div className='attr'>- BROADWAY WORLD</div>
-									</div>
-									<p>In the course of developing this piece, I believe Andy and I have managed to find a way to make the story a reflection of our own worldview, while maintaining the heart of the story we all love. We have unapologetically presented the world as we would like to see it. Not without its flaws and adversity, but with the ability to transcend by embracing people for who they are and their own intrinsic value. At the same time, we have tried to include all the iconic characters and moments we’ve come to love, compressed into a 2-1/2-hour musical journey that will take you through the gamut of human emotions. And you are sure to come to the inevitable conclusion: it really is a Wonderful Life.</p>
+
+									<p>A friend of mine once theorized that there are two kinds of people in this world—those who prefer <i>Miracle on 34th Street</i>, and those who prefer <i>It's a Wonderful Life</i>. I believe there is room for both, but I am firmly in the camp of the latter. </p>
+
+									<Quote key={Math.random()} item={QUOTES.find(i=>i.id==8)} id={0} />
+
+									<p>I first discovered <i>It's a Wonderful Life</i> in my teens. It was in the days when the film was shown continuously on all the cable networks, so after I had watched it once through, I flipped to another station and watched it again, and then I watched it again. The triumphant joy of that final scene is what ultimately drew me in. George Bailey hasn&rsquo;t overcome his difficulties—he's still in hot water over the supposed mishandling of funds—but even before the town comes to his rescue, he has realized that despite his tribulations, his life&rsquo;s value is in all the loving relationships that have gone into the creation of his own identity—he is not alone. This a story that has stuck with me over the years like very few others. In some ways, I think we all feel like George Bailey at some point, and his epiphany at the end of the film is an inspiration for those darker times.</p>
+
+									<Quote key={Math.random()} item={QUOTES.find(i=>i.id==15)} id={1} />
+
+									<p>In the course of developing this piece, I believe Andy and I have managed to find a way to make the story a reflection of our own worldview, while maintaining the heart of the story we all love. We have unapologetically presented the world as we would like to see it. Not without its flaws and adversity, but with the ability to transcend by embracing people for who they are and their own intrinsic value. At the same time, we have tried to include all the iconic characters and moments we’ve come to love, compressed into a 2&#189;-hour musical journey that will take you through the gamut of human emotions. And you are sure to come to the inevitable conclusion: it really is a Wonderful Life.</p>
 								</div>
 							</div>
 						</div>
@@ -49,12 +50,11 @@ export function Concept(props){
 							<div className='header1'>The Concept</div>
 							<div className='body'>
 								<div className='column'>
-									<p>We wanted to maintain the original time and place. But at the same time, we also wanted to reflect who we are today. That wasn't so hard to do, because this story was always ahead of its time in some ways. Frank Capra, the original scriptwriter, always envisioned American society in terms of what it could and should be, rather than strictly what it is. In film after film, such as Mr. Smith Goes to Washington and Meet John Doe, he portrayed an America that tended toward greed and corruption, and gave us a common-man hero who combats villainy through integrity and individualism. That was perhaps not exactly how Americans tended to see themselves coming out of the Great Depression, but it’s a theme that certainly carried through into the turbulent 60s, when our nation began to see the value in the diversity of people and ideas that was always there, bubbling under the surface.</p>
-									<div className='text-quote dark'>
-										<div className='quote'>This production demonstrates that&nbsp;<i>It’s a Wonderful Life: A New Musical</i>, with its sophisticated score, emotional depth, and uniformly strong performances, deserves to become a holiday perennial.</div>
-										<div className='attr'>- BROADWAY WORLD</div>
-									</div>
-									<p>The themes of family bonds and faithful friends remains front and center. The core of this story will always be the importance of building relationships out of love and respect—the Golden Rule, if you will. And out of these themes we take a journey through the gamut of George’s tribulations and triumphs to ultimately experience that potent catharsis that brings us back to this story year after year. </p>
+									<p>We wanted to maintain the original time and place. But at the same time, we also wanted to reflect who we are today. That wasn't so hard to do, because this story was always ahead of its time in some ways. Frank Capra, the original scriptwriter, always envisioned American society in terms of what it could and should be, rather than strictly what it is. In film after film, such as <i>Mr. Smith Goes to Washington</i> and <i>Meet John Doe</i>, he portrayed an America that tended toward greed and corruption, and gave us a common-man hero who combats villainy through integrity and individualism. That was perhaps not exactly how Americans tended to see themselves coming out of the Great Depression, but it’s a theme that certainly carried through into the turbulent &rsquo;60s, when our nation began to see the value in the diversity of people and ideas&mdash;a message that was always there in the film, bubbling under the surface.</p>
+									
+									<Quote key={Math.random()} item={QUOTES.find(i=>i.id==14)} id={1} />
+									
+									<p>In our adaptation, the themes of family bonds and faithful friends remain front and center. The core of this story will always be the importance of building relationships out of love and respect—the Golden Rule, if you will. And out of these themes we take a journey through the Odyssey of George’s tribulations and triumphs to ultimately experience that potent catharsis that brings us back to this story year after year. </p>
 							</div>
 						</div>
 						</div>
@@ -66,7 +66,7 @@ export function Concept(props){
 function Different(props){
 	return <div className='op-container note'>
 						<div className='op-text-body'>
-							<div className='header1'>What's Different</div>
+							<div className='header1'>What&rsquo;s Different</div>
 							<div className='body'>
 								<div className='column'>
 									{ DIFFERENT.map(p=><ListItem key={Math.random()} item={p} />  )}
@@ -79,7 +79,7 @@ function Different(props){
 function Familiar(props){
 	return <div className='op-container note'>
 					<div className='op-text-body'>
-						<div className='header1'>What's Familiar</div>
+						<div className='header1'>What&rsquo;s Familiar</div>
 						<div className='body'>
 								<div className='column'>
 									{ FAMILIAR.map(p=><ListItem key={Math.random()} item={p} />  )}

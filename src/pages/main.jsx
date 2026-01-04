@@ -18,6 +18,12 @@ import '../styles/lists.scss'
 import '../styles/buttons.scss'
 import '../styles/script.scss'
 
+
+PHOTOS.forEach(item=>{
+	const img = new Image()
+	img.src = `/assets/photos/${item.file}`
+})
+
 export function Layout(props){
 	return <div className='app-main'>
 			<Outlet />

@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from "react-router-dom"
 import { useState, useEffect, useRef } from 'react';
+import DOMPurify from 'dompurify';
 
 import { QUOTES } from '../helpers/lists.jsx'
 
@@ -56,9 +57,9 @@ export function Quotes(props){
 					</div>
 }
 
-function Quote(props){
+export function Quote(props){
 		return <div className={`text-quote${(props.item.id%2==0)?' dark':''}`}>
-							<div className='quote'>{props.item.quote}</div>
+							<div className='quote' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(props.item.quote) }} />
 							<div className='attr'>- {props.item.source}</div>
 						</div>
 }
