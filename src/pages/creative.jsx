@@ -6,13 +6,13 @@ import { ListItem, CastItem } from './lists.jsx'
 import { PhotoInline } from './photos.jsx'
 
 export function Creative(props){
-	return <>
-			<nav className='button-container'>
+	return <div>
+			<nav className='button-container sub'>
 				<NavLink to='/main/creative/writers' className='button'>Writers</NavLink>
 				<NavLink to='/main/creative/cast' className='button'>Cast</NavLink>
 			</nav>
 			<Outlet />
-		</>
+		</div>
 }
 
 export function Writers(){

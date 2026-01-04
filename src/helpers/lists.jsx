@@ -3,6 +3,8 @@ const captimes = 'The Cap Times',
 	  madmag='Madison Magazine',
 	  tbway= "Talkin' Browadway"
 
+export const isItActive = (active) => (active) ? 'button active' : 'button'
+
 const getPhoto = (id) => PHOTOS.find(p=>p.id==id).file.split('.')[0] 
 
 export const PHOTOS = [

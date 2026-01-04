@@ -7,7 +7,7 @@ import { QUOTES } from '../helpers/lists.jsx'
 
 export function Media(props){
 	return <>
-			<nav className='button-container'>
+			<nav className='button-container sub'>
 				<NavLink to='/main/media/photos' className='button'>Photos</NavLink>
 				<NavLink to='/main/media/videos/promo' className='button'>Videos</NavLink>
 				<NavLink to='/main/media/praise' className='button'>Quotes</NavLink>
@@ -18,7 +18,7 @@ export function Media(props){
 
 export function Videos(props){
 	return <>
-			<nav className='button-container'>
+			<nav className='button-container sub'>
 				<NavLink to='/main/media/videos/promo' className='button'>Promo Reel</NavLink>
 				<NavLink to='/main/media/videos/sizzle' className='button'>Sizzle Reel</NavLink>
 			</nav>

@@ -1,22 +1,22 @@
 import { Outlet, NavLink } from "react-router-dom"
 import { useState, useEffect, useRef } from 'react';
 
-import { DIFFERENT, FAMILIAR, QUOTES, CHARACTERS } from '../helpers/lists.jsx'
+import { DIFFERENT, FAMILIAR, QUOTES, CHARACTERS, isItActive } from '../helpers/lists.jsx'
 import { Quote } from './media.jsx'
 import { ListItem } from './lists.jsx'
 import { PhotoInline } from './photos.jsx'
 
 export function About(props){
-	return <div>
-			<nav className='button-container'>
-				<NavLink to='/main/about/note' className='button'>Note</NavLink>
-				<NavLink to='/main/about/concept' className='button'>Concept</NavLink>
-				<NavLink to='/main/about/story' className='button'>Story</NavLink>
-				<NavLink to='/main/about/script' className='button'>Script</NavLink>
-				<NavLink to='/main/about/cast' className='button'>Cast</NavLink>
+	return <>
+			<nav className='button-container sub'>
+				<NavLink key={Math.random()} to='/main/about/note' className='button'>Note</NavLink>
+				<NavLink key={Math.random()} to='/main/about/concept' className='button'>Concept</NavLink>
+				<NavLink key={Math.random()} to='/main/about/story' className='button'>Story</NavLink>
+				<NavLink key={Math.random()} to='/main/about/script' className='button'>Script</NavLink>
+				<NavLink key={Math.random()} to='/main/about/cast' className='button'>Cast</NavLink>
 			</nav>
 			<Outlet />
-		</div>
+			</>
 }
 
 export function Note(props){

@@ -36,10 +36,10 @@ export function StaticPage(props){
 					<Hero />
 					<div className='op-container main'>
 						<nav className="button-container">
-							<NavLink to='/main/about/note' className='button'>About</NavLink>
-							<NavLink to='/main/music/notes' className='button'>Music</NavLink>
-							<NavLink to='/main/media/photos' className='button'>Media</NavLink>
-							<NavLink to='/main/creative/writers' className='button'>Creative</NavLink>
+							<NavLink key={Math.random()} to='/main/about/note' className={'button'}>About</NavLink>
+							<NavLink key={Math.random()} to='/main/music/notes' className='button'>Music</NavLink>
+							<NavLink key={Math.random()} to='/main/media/photos' className='button'>Media</NavLink>
+							<NavLink key={Math.random()} to='/main/creative/writers' className='button'>Creative</NavLink>
 						</nav>
 						<Outlet />
 					</div>
