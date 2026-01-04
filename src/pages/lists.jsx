@@ -12,7 +12,7 @@ export function CastItem(props){
 	return <div className='castItem'>
 					<div className='role'>{props.item.role}</div>
 					<div className='dots'>&nbsp;</div>
-					<div className='name' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(props.item.desc) }} />
+					<div className='name' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(props.item.name) }} />
 				 </div>
 
 }

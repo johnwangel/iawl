@@ -38,8 +38,8 @@ export function Hero(props){
 
 							</div>
 							<div className='ack'>
-								<div><i>It's A Wonderful Life</i> is based on the story 'The Greatest Gift' by Philip Van Doren Stern.
-						   'The Greatest Gift' is used by permission of The Greatest Gift Corporation.</div>
+								<div><i>It&rsquo;s A Wonderful Life</i> is based on the story &lsquo;The Greatest Gift&rsquo; by Philip Van Doren Stern.
+						   &lsquo;The Greatest Gift&rdquo; is used by permission of The Greatest Gift Corporation.</div>
 							</div>
 					</div>
 }

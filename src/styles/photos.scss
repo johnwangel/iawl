@@ -25,12 +25,15 @@
 }
 
 .photo-inline {
+	position: relative;
 	@include flex();
 	max-width: 100%;
 	margin-bottom: 25px;
 	img {
+		position: relative;
 		width: 100%;
 		object-fit: contain;
+		object-position: 25%ß;
 	}
 }
 

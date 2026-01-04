@@ -42,10 +42,11 @@ export const PHOTOS = [
 	{ id: 1, file:  "A2S11 Angel get wings zuzu.jpg", caption: "Listen Daddy!" },
 	{ id: 33, file:  "A2S11Clarence Wings.jpg", caption: "Clarence Gets His Wings" },
 	{ id: 39, file:  "A2S11 Full Cast Bows.jpg", caption: "Final Bows" },
+	{ id: 50, file:  "evan.jpg", caption: "The Orchestra" },
 ]
 
 export const SONGS = [
-		{ id: 1, include: true, name: 'Overture', file: 'overture', img: getPhoto(39), desc: 'Overture' },
+		{ id: 1, include: true, name: 'Overture', file: 'overture', img: getPhoto(50), desc: 'Overture' },
 		{ id: 2, include: false, name: 'Bedford Falls', file: 'bedfordfalls', img: getPhoto(24), desc: 'Bedford Falls' },
 		{ id: 3, include: true, name: 'Think Big', file:  'thinkbig', img: 'thinkbig2', desc: 'George, Mary, and Violet' },
 		{ id: 4, include: false, name: 'Shabby', file: 'shabby', img: getPhoto(42), desc: '' },

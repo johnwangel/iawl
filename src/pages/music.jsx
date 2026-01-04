@@ -21,8 +21,8 @@ export function MusicNotes(props){
 							<div className='header2'>Andrew Abrams</div>
 							<div className='body'>
 								<div className='column'>
-									<p>When I began writing the score for <i>It’s a Wonderful Life: A New Musical</i>, I knew it was essential to let the music reflect the eras through which the story moves. As George grows—aging, changing, and maturing—the musical language grows and matures with him. I wanted the score itself to chart that evolution.</p>
-									<p>“Bedford Falls,” for example, carries hints of ragtime and early 20th-century popular music; “Doing the Charleston” propels us, singing and dancing, straight into the exuberance of the 1920s; and “You Can’t Keep the Bailey Boys Down” embraces the vibrant swing of the 1940s. All of this musical history culminates in “Pottersville,” which twists themes heard earlier in the show—shifting them into minor keys, disrupting rhythms, and layering everything with the smoky, late-1940s jazz-club atmosphere that defines that world.</p>
+									<p>When I began writing the score for <i>It’s a Wonderful Life: A New Musical</i>, I knew it was essential to let the music reflect the eras through which the story moves. As George grows&mdash;aging, changing, and maturing&mdash;the musical language grows and matures with him. I wanted the score itself to chart that evolution.</p>
+									<p>“Bedford Falls,” for example, carries hints of ragtime and early 20th-century popular music; “Doing the Charleston” propels us, singing and dancing, straight into the exuberance of the 1920s; and “You Can’t Keep the Bailey Boys Down” embraces the vibrant swing of the 1940s. All of this musical history culminates in “Pottersville,” which twists themes heard earlier in the show&mdash;shifting them into minor keys, disrupting rhythms, and layering everything with the smoky, late-1940s jazz-club atmosphere that defines that world.</p>
 									<p>The show is written for a cast of 21, though larger companies will find it easy to expand. It can also be produced with fewer performers; however, because the piece includes several choral numbers, the music director will need to ensure that all vocal lines are fully covered.</p>
 									<p>Our brilliant orchestrator, Evan Lange, has arranged the score for 24 musicians, including a lush section of 10 live string players. The orchestration can be reduced to 17 (with strings covered by a quartet and a Keyboard 2 string book), and I’m confident that producing companies can adapt the instrumentation further to suit their needs.</p>
 								</div>
@@ -92,17 +92,6 @@ export function AudioPlayer(props) {
       audio.removeEventListener('error', handleError);
     };
   }, [src,props.playing]);
-
-
-
-  // const togglePlay = () => {
-  //   if (isPlaying) {
-  //     audioRef.current.pause();
-  //   } else {
-  //   	props.change(props.id);
-  //     audioRef.current.play();
-  //   }
-  // };
 
   return (
     <div className={`audio-player${props.playing?' active':''}`} onClick={()=>props.change(props.id)}>

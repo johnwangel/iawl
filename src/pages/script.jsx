@@ -9,11 +9,11 @@ export function Script(props){
 						<div className='op-text-body'>
 							<div className='header1'>Script Excerpt</div>
 							<Song id={17} />
-							<div className='intro'>Following is an excerpt from Act 2, depicting the entire unborn-George/Pottersville sequence. To experience the entire musical scene of the scene, press the Play button above to hear the recording. <b>Please contact us if you would like a complementary spec script.</b></div>
+							<div className='intro'>Following is an excerpt from Act 2, depicting the entire unborn-George/Pottersville sequence. Press the Play button above to follow along with the full musical scene.<b>Please contact us if you would like a complementary spec script.</b></div>
 
 								<div className='script'>
 									<div className='scene'>SCENE 8 TRANSITION</div>
-									<div className='setting'>A chanteuse appears in a soft lights, obscuring that it is Violet. Her hair, clothing, and makeup look cheap and vulgar.</div>
+									<div className='setting'>A chanteuse appears in a soft lights. We gradually realize that it is Violet. But something is off. Attired in tawdry makeup and costume, she is in stark contrast to her typical refined appearance.</div>
 									<div className='character'>VIOLET</div>
 									<div className='lyric'>
 										I WANNA WALK EACH MIGHTY MILE

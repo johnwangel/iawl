@@ -21,8 +21,9 @@ export function Writers(){
 							<div className='header1'>The Writing Team</div>
 							<div className='body'>
 								<div className='column'>
+									<PhotoInline file='andyjohn.jpg' />
 									{ CREATIVES.map(p=><ListItem key={Math.random()} item={p} />  )}
-									<PhotoInline file='OrpheumMarquee.jpg' />
+									<PhotoInline file='evan.jpg' />
 								</div>
 							</div>
 						</div>
